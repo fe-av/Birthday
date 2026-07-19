@@ -14,7 +14,6 @@
             <img src="assets/abhi-manga-host.png" alt="Anime manga style Abhishek birthday quest host">
           </div>
           <div class="speech">
-            <p class="kicker">Anime Birthday Arc</p>
             <h1>The Seven-Level Birthday Quest begins now.</h1>
             <p class="lead">Gather your team, survive the clues, and reach the final boss. Only then can you claim birthday glory.</p>
             <form class="team-form" data-team-form>
@@ -87,14 +86,27 @@
       </section>
 
       <section class="screen" data-screen="level-4">
-        <div class="quest-card linkedin">
+        <div class="quest-card">
           <div class="topline">
             <span>Level 4 of 7</span>
-            <span>LinkedIn Portal</span>
+            <span>Coordinate Hunt</span>
           </div>
-          <p class="dialogue">A very serious professional portal opens. Find the person Abhi would most likely connect with for this birthday mission.</p>
-          <div class="profile-grid" data-profile-grid></div>
-          <p class="hint">Clue: choose the profile whose initials match Abhishek Vijayan, and whose headline sounds like birthday-energy plus structural-brain.</p>
+          <p class="dialogue"><span data-team-inline>your team</span> finds an old campus map. Abhi's undergrad location is marked, but the numbers are smudged like a dramatic treasure-map scene.</p>
+          <h2>Find the coordinates for Abhi's undergrad school.</h2>
+          <p class="hint">Fill the missing numbers. The direction letters are already locked: N and E.</p>
+          <div class="coordinate-card">
+            <label for="latitude-answer">Latitude</label>
+            <div class="coordinate-row">
+              <input id="latitude-answer" name="latitude" autocomplete="off" placeholder="__.___">
+              <span>N</span>
+            </div>
+            <label for="longitude-answer">Longitude</label>
+            <div class="coordinate-row">
+              <input id="longitude-answer" name="longitude" autocomplete="off" placeholder="__.___">
+              <span>E</span>
+            </div>
+          </div>
+          <button type="button" data-check-coordinates>Unlock Concert Gate</button>
           <p class="feedback" data-level-four-feedback aria-live="polite"></p>
         </div>
       </section>
@@ -103,17 +115,12 @@
         <div class="quest-card">
           <div class="topline">
             <span>Level 5 of 7</span>
-            <span>Cafe Combo</span>
+            <span>Concert Portal</span>
           </div>
-          <p class="dialogue">After all that detective work, <span data-team-inline>your team</span> and Abhi walk into a coffee place. The barista will only serve the secret combo in the correct order.</p>
-          <h2>Build the birthday cafe order.</h2>
-          <p class="hint">Clue: start with coffee, add cake, finish with celebration.</p>
-          <div class="choice-grid" data-cafe-choices></div>
-          <div class="combo-tray" data-cafe-tray aria-label="Selected cafe order"></div>
-          <div class="button-row">
-            <button type="button" data-reset-cafe>Reset Order</button>
-            <button type="button" data-check-cafe>Serve It</button>
-          </div>
+          <p class="dialogue">Coordinates restored. Suddenly, <span data-team-inline>your team</span> and Abhi are at a concert. The lights go down. The crowd screams. The birthday host will only move forward if you pick the correct artist.</p>
+          <h2>Who is Abhi's favorite artist?</h2>
+          <p class="hint">Clue: the answer is not a solo artist. It points in exactly one direction.</p>
+          <div class="choice-grid" data-artist-choices></div>
           <p class="feedback" data-level-five-feedback aria-live="polite"></p>
         </div>
       </section>
@@ -145,12 +152,22 @@
             <img src="assets/abhi-manga-host.png" alt="Anime manga style Abhishek final boss">
           </div>
           <p class="kicker">Grand Finale</p>
-          <h2>The Birthday Oath</h2>
-          <p class="lead"><span data-team-inline>your team</span> has cleared six gates. For the final task, stand with Abhi and enter the oath exactly:</p>
-          <blockquote>We survived the birthday arc, respected the clues, and now demand cake.</blockquote>
+          <h2>Unlock the code to win.</h2>
+          <p class="lead"><span data-team-inline>your team</span> reaches the final lock. Four digits. Three clues. One victory screen.</p>
+          <div class="lock-box" aria-label="Four digit lock">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="clue-list">
+            <li>Digit 1: Number of months Abhishek worked as a bridge design engineer on the East Coast in 2025. Clue: LinkedIn knows.</li>
+            <li>Digit 2: Last digit of Abhi's phone number.</li>
+            <li>Digits 3 and 4: Hidden in this room. Go to the chart and look at the image Abhi drew there.</li>
+          </ul>
           <form class="answer-form" data-level-seven-form>
-            <label for="oath-answer">Birthday oath</label>
-            <input id="oath-answer" name="oath" autocomplete="off" placeholder="Type the oath exactly">
+            <label for="code-answer">4-digit code</label>
+            <input id="code-answer" name="code" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="0000">
             <button class="primary-action" type="submit">Complete Quest</button>
           </form>
           <p class="feedback" data-level-seven-feedback aria-live="polite"></p>

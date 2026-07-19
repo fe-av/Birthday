@@ -27,10 +27,10 @@ Level 2 answer: `France`
 
 Level 3 answer: `Forell Elsesser`
 
-Level 4 answer: select `Abhishek Vijayan`
+Level 4 answers: latitude `10.762`, longitude `78.816`
 
-Level 5 answer order: `Coffee`, `Cake`, `Celebration`
+Level 5 answer: `One Direction`
 
 Level 6: upload a selfie
 
-Level 7: say the birthday oath
+Level 7 answer: `3600`

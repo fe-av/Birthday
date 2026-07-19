@@ -1,40 +1,14 @@
 const screens = [...document.querySelectorAll("[data-screen]")];
 const teamInline = [...document.querySelectorAll("[data-team-inline]")];
 const letterBank = document.querySelector("[data-letter-bank]");
-const profileGrid = document.querySelector("[data-profile-grid]");
-const cafeChoices = document.querySelector("[data-cafe-choices]");
-const cafeTray = document.querySelector("[data-cafe-tray]");
+const artistChoices = document.querySelector("[data-artist-choices]");
 const selfieUpload = document.querySelector("[data-selfie-upload]");
 const selfiePreview = document.querySelector("[data-selfie-preview]");
 
 let teamName = "your team";
 let selfieReady = false;
 
-const cafeOrder = ["Coffee", "Cake", "Celebration"];
-const requiredOath = "we survived the birthday arc respected the clues and now demand cake";
-const cafeOptions = ["Confetti", "Coffee", "Cake", "Structural Drawings", "Celebration", "Mystery Sandwich"];
-const profileOptions = [
-  {
-    name: "Aarav Venkat",
-    title: "Analytics wizard seeking quiet spreadsheets",
-    correct: false,
-  },
-  {
-    name: "Abhishek Vijayan",
-    title: "Structural designer, birthday main character, clue collector",
-    correct: true,
-  },
-  {
-    name: "Anika Verma",
-    title: "Travel photographer with suspiciously perfect lighting",
-    correct: false,
-  },
-  {
-    name: "Aiden Varghese",
-    title: "Coffee reviewer and professional meeting accepter",
-    correct: false,
-  },
-];
+const artistOptions = ["The Weeknd", "One Direction", "Taylor Swift", "Coldplay", "Ed Sheeran", "BTS"];
 
 function showScreen(name) {
   screens.forEach((screen) => {
@@ -90,43 +64,23 @@ function renderLetters() {
   });
 }
 
-function renderProfiles() {
-  profileGrid.innerHTML = "";
-  profileOptions.forEach((profile) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "profile-card";
-    button.innerHTML = `<strong>${profile.name}</strong><span>${profile.title}</span>`;
-    button.addEventListener("click", () => {
-      const feedback = document.querySelector("[data-level-four-feedback]");
-      if (profile.correct) {
-        setFeedback(feedback, "Connection accepted. The portal respects this choice.", true);
-        window.setTimeout(() => showScreen("level-5"), 800);
-        return;
-      }
-      setFeedback(feedback, "Connection request ignored. Read the clue like a recruiter with coffee.", false);
-    });
-    profileGrid.append(button);
-  });
-}
-
-function renderCafeChoices() {
-  cafeChoices.innerHTML = "";
-  cafeTray.innerHTML = "";
-  cafeOptions.forEach((choice) => {
+function renderArtistChoices() {
+  artistChoices.innerHTML = "";
+  artistOptions.forEach((choice) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "choice-card";
     button.textContent = choice;
     button.addEventListener("click", () => {
-      const trayItem = document.createElement("button");
-      trayItem.type = "button";
-      trayItem.className = "choice-card";
-      trayItem.textContent = choice;
-      trayItem.addEventListener("click", () => trayItem.remove());
-      cafeTray.append(trayItem);
+      const feedback = document.querySelector("[data-level-five-feedback]");
+      if (normalize(choice) === "onedirection") {
+        setFeedback(feedback, "Correct. The concert portal opens in one direction only.", true);
+        window.setTimeout(() => showScreen("level-6"), 800);
+        return;
+      }
+      setFeedback(feedback, "Nope. The crowd is booing politely. Follow the hint.", false);
     });
-    cafeChoices.append(button);
+    artistChoices.append(button);
   });
 }
 
@@ -180,23 +134,20 @@ document.querySelector("[data-level-three-form]").addEventListener("submit", (ev
   setFeedback(feedback, "The letters are close, but the company name is still scrambled.", false);
 });
 
-document.querySelector("[data-reset-cafe]").addEventListener("click", () => {
-  cafeTray.innerHTML = "";
-  document.querySelector("[data-level-five-feedback]").textContent = "";
-});
+document.querySelector("[data-check-coordinates]").addEventListener("click", () => {
+  const latitude = document.querySelector("#latitude-answer").value.trim();
+  const longitude = document.querySelector("#longitude-answer").value.trim();
+  const feedback = document.querySelector("[data-level-four-feedback]");
+  const cleanLatitude = latitude.replace(/\s+/g, "");
+  const cleanLongitude = longitude.replace(/\s+/g, "");
 
-document.querySelector("[data-check-cafe]").addEventListener("click", () => {
-  const selected = [...cafeTray.children].map((item) => item.textContent);
-  const feedback = document.querySelector("[data-level-five-feedback]");
-  const correct = selected.length === cafeOrder.length && selected.every((item, index) => item === cafeOrder[index]);
-
-  if (correct) {
-    setFeedback(feedback, `${teamName} and Abhi have secured the birthday cafe order.`, true);
-    window.setTimeout(() => showScreen("level-6"), 800);
+  if (cleanLatitude === "10.762" && cleanLongitude === "78.816") {
+    setFeedback(feedback, "Coordinates locked. The concert portal is opening.", true);
+    window.setTimeout(() => showScreen("level-5"), 800);
     return;
   }
 
-  setFeedback(feedback, "Wrong order. The barista demands coffee, cake, then celebration.", false);
+  setFeedback(feedback, "Wrong coordinates. Keep the N and E, but fix the numbers.", false);
 });
 
 selfieUpload.addEventListener("change", () => {
@@ -230,15 +181,15 @@ document.querySelector("[data-confirm-selfie]").addEventListener("click", () => 
 document.querySelector("[data-level-seven-form]").addEventListener("submit", (event) => {
   event.preventDefault();
   const feedback = document.querySelector("[data-level-seven-feedback]");
-  const answer = normalize(event.currentTarget.oath.value);
+  const answer = event.currentTarget.code.value.trim();
 
-  if (answer === normalize(requiredOath)) {
-    setFeedback(feedback, "Oath accepted. Victory is loading.", true);
+  if (answer === "3600") {
+    setFeedback(feedback, "Code accepted. The final lock just opened.", true);
     window.setTimeout(() => showScreen("victory"), 900);
     return;
   }
 
-  setFeedback(feedback, "Almost. Type the oath exactly like the final manga panel demands.", false);
+  setFeedback(feedback, "Lock denied. Re-check the three clues and try the 4-digit code again.", false);
 });
 
 document.querySelector("[data-restart]").addEventListener("click", () => {
@@ -251,10 +202,8 @@ document.querySelector("[data-restart]").addEventListener("click", () => {
   selfiePreview.removeAttribute("src");
   selfiePreview.classList.remove("visible");
   updateTeamName("");
-  renderCafeChoices();
   showScreen("intro");
 });
 
 renderLetters();
-renderProfiles();
-renderCafeChoices();
+renderArtistChoices();
