@@ -31,6 +31,22 @@ Level 4 answers: latitude `10.762`, longitude `78.816`
 
 Level 5 answer: `One Direction`
 
-Level 6: upload a selfie
+Level 6: upload a selfie; Netlify function saves it to `selfies/` in this GitHub repo
 
 Level 7 answer: `3600`
+
+## Selfie Upload Setup
+
+This site needs Netlify for selfie uploads. GitHub Pages alone cannot save uploads.
+
+1. Deploy this repo on Netlify.
+2. In Netlify, go to `Site configuration > Environment variables`.
+3. Add `GITHUB_TOKEN`.
+4. The token needs permission to write repository contents for `fe-av/Birthday`.
+5. Redeploy the Netlify site.
+
+Selfies are committed to:
+
+```text
+selfies/
+```

@@ -5,7 +5,6 @@ const selfieUpload = document.querySelector("[data-selfie-upload]");
 const selfiePreview = document.querySelector("[data-selfie-preview]");
 
 let teamName = "your team";
-let selfieReady = false;
 
 function showScreen(name) {
   screens.forEach((screen) => {
@@ -65,7 +64,7 @@ document.querySelector("[data-team-form]").addEventListener("submit", (event) =>
   event.preventDefault();
   const feedback = document.querySelector("[data-team-feedback]");
   updateTeamName(event.currentTarget.teamNames.value);
-  setFeedback(feedback, `${teamName}, your quest party is registered.`, true);
+  setFeedback(feedback, `${teamName}, your quest party is registered. The first page is turning.`, true);
   window.setTimeout(() => showScreen("level-1"), 700);
 });
 
@@ -75,7 +74,7 @@ document.querySelector("[data-level-one-form]").addEventListener("submit", (even
   const feedback = document.querySelector("[data-level-one-feedback]");
 
   if (answer === "27072002" || answer === "07272002") {
-    setFeedback(feedback, "Correct. The cake calendar has accepted your offering.", true);
+    setFeedback(feedback, "Origin Fragment recovered. The cake calendar stops glitching.", true);
     window.setTimeout(() => showScreen("level-2"), 800);
     return;
   }
@@ -89,7 +88,7 @@ document.querySelector("[data-level-two-form]").addEventListener("submit", (even
   const feedback = document.querySelector("[data-level-two-feedback]");
 
   if (answer === "france") {
-    setFeedback(feedback, "Correct. The passport stamp flashes dramatically.", true);
+    setFeedback(feedback, "Passport Fragment recovered. The travel flashback is complete.", true);
     window.setTimeout(() => showScreen("level-3"), 800);
     return;
   }
@@ -103,7 +102,7 @@ document.querySelector("[data-level-three-form]").addEventListener("submit", (ev
   const feedback = document.querySelector("[data-level-three-feedback]");
 
   if (answer === "forellelsesser") {
-    setFeedback(feedback, "Correct. The office arc is unlocked.", true);
+    setFeedback(feedback, "Work Fragment recovered. The letter forge cools down.", true);
     window.setTimeout(() => showScreen("level-4"), 800);
     return;
   }
@@ -119,7 +118,7 @@ document.querySelector("[data-check-coordinates]").addEventListener("click", () 
   const cleanLongitude = longitude.replace(/\s+/g, "");
 
   if (cleanLatitude === "10.762" && cleanLongitude === "78.816") {
-    setFeedback(feedback, "Coordinates locked. The concert portal is opening.", true);
+    setFeedback(feedback, "Campus Fragment recovered. The map folds into a concert ticket.", true);
     window.setTimeout(() => showScreen("level-5"), 800);
     return;
   }
@@ -133,7 +132,7 @@ document.querySelector("[data-level-five-form]").addEventListener("submit", (eve
   const answer = normalize(event.currentTarget.artist.value);
 
   if (answer === "onedirection" || answer === "1direction") {
-    setFeedback(feedback, "Correct. The concert portal opens in one direction only.", true);
+    setFeedback(feedback, "Concert Fragment recovered. The sound gate opens in one direction only.", true);
     window.setTimeout(() => showScreen("level-6"), 800);
     return;
   }
@@ -143,30 +142,54 @@ document.querySelector("[data-level-five-form]").addEventListener("submit", (eve
 
 selfieUpload.addEventListener("change", () => {
   const file = selfieUpload.files[0];
-  const feedback = document.querySelector("[data-level-six-feedback]");
-
   if (!file) {
-    selfieReady = false;
+    selfiePreview.removeAttribute("src");
     selfiePreview.classList.remove("visible");
     return;
   }
 
-  selfieReady = true;
   selfiePreview.src = URL.createObjectURL(file);
   selfiePreview.classList.add("visible");
-  setFeedback(feedback, "Selfie received. Confirm it to unlock the final boss.", true);
 });
 
-document.querySelector("[data-confirm-selfie]").addEventListener("click", () => {
+document.querySelector("[data-selfie-form]").addEventListener("submit", async (event) => {
+  event.preventDefault();
   const feedback = document.querySelector("[data-level-six-feedback]");
+  const file = selfieUpload.files[0];
 
-  if (!selfieReady) {
-    setFeedback(feedback, "Upload the selfie first. The story needs proof.", false);
+  if (!file) {
+    setFeedback(feedback, "Choose a selfie first. The archive needs an actual image.", false);
     return;
   }
 
-  setFeedback(feedback, "Selfie proof accepted.", true);
-  window.setTimeout(() => showScreen("level-7"), 800);
+  const submitButton = event.currentTarget.querySelector("button");
+  submitButton.disabled = true;
+  submitButton.textContent = "Uploading...";
+  setFeedback(feedback, "Uploading selfie proof into the quest archive...", true);
+
+  const payload = new FormData();
+  payload.append("selfie", file);
+  payload.append("teamName", teamName);
+
+  try {
+    const response = await fetch("/.netlify/functions/upload-selfie", {
+      method: "POST",
+      body: payload,
+    });
+    const result = await response.json();
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || "Upload failed.");
+    }
+
+    setFeedback(feedback, "Proof Fragment recovered. The selfie is saved in the quest archive.", true);
+    window.setTimeout(() => showScreen("level-7"), 900);
+  } catch (error) {
+    setFeedback(feedback, `Upload failed: ${error.message}`, false);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Upload Selfie Proof";
+  }
 });
 
 document.querySelector("[data-level-seven-form]").addEventListener("submit", (event) => {
@@ -175,7 +198,7 @@ document.querySelector("[data-level-seven-form]").addEventListener("submit", (ev
   const answer = event.currentTarget.code.value.trim();
 
   if (answer === "3600") {
-    setFeedback(feedback, "Code accepted. The final lock just opened.", true);
+    setFeedback(feedback, "Final Fragment recovered. The Birthday Core is unlocking.", true);
     window.setTimeout(() => showScreen("victory"), 900);
     return;
   }
@@ -189,7 +212,6 @@ document.querySelector("[data-restart]").addEventListener("click", () => {
     item.textContent = "";
     item.className = "feedback";
   });
-  selfieReady = false;
   selfiePreview.removeAttribute("src");
   selfiePreview.classList.remove("visible");
   updateTeamName("");

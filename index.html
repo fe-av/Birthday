@@ -14,8 +14,8 @@
             <img src="assets/abhi-manga-host.png" alt="Anime manga style Abhishek birthday quest host">
           </div>
           <div class="speech">
-            <h1>The Seven-Level Birthday Quest begins now.</h1>
-            <p class="lead">Gather your team, survive the clues, and reach the final boss. Only then can you claim birthday glory.</p>
+            <h1>The Birthday Core has been sealed.</h1>
+            <p class="lead">Abhi has scattered seven memory fragments across dates, travel, work, maps, music, real life, and one final locked code. Gather your team, read every clue, recover each fragment, and prove you deserve birthday glory.</p>
             <form class="team-form" data-team-form>
               <label for="team-names">Team player names</label>
               <input id="team-names" name="teamNames" autocomplete="off" placeholder="Example: Alex, Kaeli, Chris">
@@ -29,15 +29,17 @@
       <section class="screen" data-screen="level-1">
         <div class="quest-card">
           <div class="topline">
-            <span>Level 1 of 7</span>
-            <span>Origin Scroll</span>
+            <span>Fragment 1 of 7</span>
+            <span>Origin Fragment</span>
           </div>
+          <div class="progress-strip"><span style="--step: 1"></span></div>
+          <p class="quest-log">Quest Log: No fragments recovered yet. The Birthday Core is still asleep.</p>
           <div class="story-grid">
             <img src="assets/abhi-manga-character.png" alt="Anime manga style Abhishek game host">
             <div>
-              <p class="dialogue">Abhi appears from the dramatic birthday smoke and asks the first question. The answer is not written on the cake. That would be too easy.</p>
-              <h2>When is my birthday?</h2>
-              <p class="hint">Tiny hint: sometimes Facebook remembers what humans forget.</p>
+              <p class="dialogue">The first panel opens with dramatic birthday smoke. Abhi points at a corrupted cake calendar, where every candle is glowing except the one that matters. Restore the original date and the first fragment will wake up.</p>
+              <h2>Restore the birthday date.</h2>
+              <p class="hint">Tiny hint: when humans forget birthdays, a certain social media calendar sometimes snitches quietly in the background.</p>
               <form class="answer-form" data-level-one-form>
                 <label for="birthday-answer">Birthday</label>
                 <input id="birthday-answer" name="birthday" autocomplete="off" placeholder="Example: 1 jan 2000">
@@ -52,12 +54,14 @@
       <section class="screen" data-screen="level-2">
         <div class="quest-card">
           <div class="topline">
-            <span>Level 2 of 7</span>
-            <span>Lost Passport Arc</span>
+            <span>Fragment 2 of 7</span>
+            <span>Passport Fragment</span>
           </div>
-          <p class="dialogue">With the birthday date restored, <span data-team-inline>your team</span> unlocks a travel memory. A passport stamp glows. One country is missing.</p>
-          <h2>What country did Abhishek spend his birthday in 2023?</h2>
-          <p class="hint">Hint: check the Instagram trail.</p>
+          <div class="progress-strip"><span style="--step: 2"></span></div>
+          <p class="quest-log">Recovered: Origin Fragment. Remaining fragments are still scattered.</p>
+          <p class="dialogue">The cake calendar clicks into place. A passport flies open by itself, pages flipping like a dramatic anime flashback. One stamp is glowing, but the country name has been scratched out.</p>
+          <h2>Recover the 2023 birthday country.</h2>
+          <p class="hint">Hint: the Instagram trail may contain the missing stamp.</p>
           <form class="answer-form" data-level-two-form>
             <label for="country-answer">Country</label>
             <input id="country-answer" name="country" autocomplete="off" placeholder="Type the country">
@@ -70,11 +74,13 @@
       <section class="screen" data-screen="level-3">
         <div class="quest-card">
           <div class="topline">
-            <span>Level 3 of 7</span>
-            <span>Letter Forge</span>
+            <span>Fragment 3 of 7</span>
+            <span>Work Fragment</span>
           </div>
-          <p class="dialogue">The next clue is broken into letters. Rebuild the company name where Abhishek is working right now.</p>
-          <h2>Where is Abhishek working right now?</h2>
+          <div class="progress-strip"><span style="--step: 3"></span></div>
+          <p class="quest-log">Recovered: Origin, Passport. The Work Fragment is shattered into letters.</p>
+          <p class="dialogue">The travel stamp turns into a pile of floating letters. They spin around like a broken title card. Somewhere inside the mess is the name of the place where Abhi currently fights deadlines, drawings, and mysterious comments.</p>
+          <h2>Rebuild the workplace name.</h2>
           <div class="letter-bank" data-letter-bank></div>
           <form class="answer-form" data-level-three-form>
             <label for="work-answer">Unscrambled answer</label>
@@ -88,12 +94,14 @@
       <section class="screen" data-screen="level-4">
         <div class="quest-card">
           <div class="topline">
-            <span>Level 4 of 7</span>
-            <span>Coordinate Hunt</span>
+            <span>Fragment 4 of 7</span>
+            <span>Campus Coordinates</span>
           </div>
-          <p class="dialogue"><span data-team-inline>your team</span> finds an old campus map. Abhi's undergrad location is marked, but the numbers are smudged like a dramatic treasure-map scene.</p>
-          <h2>Find the coordinates for Abhi's undergrad school.</h2>
-          <p class="hint">Fill the missing numbers. The direction letters are already locked: N and E.</p>
+          <div class="progress-strip"><span style="--step: 4"></span></div>
+          <p class="quest-log">Recovered: Origin, Passport, Work. The map room has unlocked.</p>
+          <p class="dialogue"><span data-team-inline>your team</span> steps into a glowing map room. A campus marker pulses on the floor, but the numbers have been smudged by the Birthday Core. The direction letters survived: N and E.</p>
+          <h2>Restore Abhi's undergrad coordinates.</h2>
+          <p class="hint">Fill only the missing numbers. The answer must match the latitude and longitude exactly enough to open the next gate.</p>
           <div class="coordinate-card">
             <label for="latitude-answer">Latitude</label>
             <div class="coordinate-row">
@@ -114,12 +122,14 @@
       <section class="screen" data-screen="level-5">
         <div class="quest-card">
           <div class="topline">
-            <span>Level 5 of 7</span>
-            <span>Concert Portal</span>
+            <span>Fragment 5 of 7</span>
+            <span>Concert Frequency</span>
           </div>
-          <p class="dialogue">Coordinates restored. Suddenly, <span data-team-inline>your team</span> and Abhi are at a concert. The lights go down. The crowd screams. The stage audio crackles through the portal.</p>
-          <h2>Find out who is performing.</h2>
-          <p class="hint">Listen carefully, then type the artist/band name. No choice options. Earn it like a real concert detective.</p>
+          <div class="progress-strip"><span style="--step: 5"></span></div>
+          <p class="quest-log">Recovered: Origin, Passport, Work, Campus. The sound gate is active.</p>
+          <p class="dialogue">The coordinates flash, the map folds into a ticket, and suddenly <span data-team-inline>your team</span> and Abhi are inside a concert portal. The lights drop. The crowd becomes a blur. Only the recording can reveal who owns this stage.</p>
+          <h2>Identify the concert frequency.</h2>
+          <p class="hint">Listen carefully, then type the artist or band name. No choices, no shortcuts, just ears and destiny.</p>
           <div class="audio-card">
             <span>Concert recording</span>
             <audio controls preload="metadata" src="assets/drag-me-down.mp3"></audio>
@@ -136,16 +146,18 @@
       <section class="screen" data-screen="level-6">
         <div class="quest-card">
           <div class="topline">
-            <span>Level 6 of 7</span>
-            <span>Selfie Proof</span>
+            <span>Fragment 6 of 7</span>
+            <span>Real-World Proof</span>
           </div>
-          <p class="dialogue">The story now demands evidence. Take a selfie with Abhishek and upload it here to unlock the final task.</p>
-          <label class="upload-card" for="selfie-upload">
-            <span>Upload selfie</span>
-            <input id="selfie-upload" type="file" accept="image/*" data-selfie-upload>
-          </label>
-          <img class="selfie-preview" data-selfie-preview alt="Uploaded selfie preview">
-          <button type="button" data-confirm-selfie>Confirm Selfie</button>
+          <div class="progress-strip"><span style="--step: 6"></span></div>
+          <p class="quest-log">Recovered: Origin, Passport, Work, Campus, Concert. Digital clues are no longer enough.</p>
+          <p class="dialogue">The concert fades out and the game breaks the fourth wall. The Birthday Core now demands proof from the real world. Find Abhi, take the selfie, and upload it here. If the upload succeeds, the proof fragment is committed into the quest archive.</p>
+          <form class="answer-form" data-selfie-form>
+            <label for="selfie-upload">Selfie proof</label>
+            <input id="selfie-upload" name="selfie" type="file" accept="image/*" data-selfie-upload>
+            <img class="selfie-preview" data-selfie-preview alt="Uploaded selfie preview">
+            <button type="submit">Upload Selfie Proof</button>
+          </form>
           <p class="feedback" data-level-six-feedback aria-live="polite"></p>
         </div>
       </section>
@@ -153,15 +165,16 @@
       <section class="screen" data-screen="level-7">
         <div class="quest-card finale">
           <div class="topline">
-            <span>Level 7 of 7</span>
-            <span>Final Boss</span>
+            <span>Fragment 7 of 7</span>
+            <span>Final Code Lock</span>
           </div>
+          <div class="progress-strip"><span style="--step: 7"></span></div>
           <div class="portrait-wrap small">
             <img src="assets/abhi-manga-character.png" alt="Anime manga style Abhishek final boss">
           </div>
           <p class="kicker">Grand Finale</p>
           <h2>Unlock the code to win.</h2>
-          <p class="lead"><span data-team-inline>your team</span> reaches the final lock. Four digits. Three clues. One victory screen.</p>
+          <p class="lead"><span data-team-inline>your team</span> reaches the sealed chamber. Six fragments orbit the final lock. Four digits remain. Three clues point to the code. One wrong number keeps the Birthday Core closed.</p>
           <div class="lock-box" aria-label="Four digit lock">
             <span></span>
             <span></span>
@@ -185,8 +198,8 @@
       <section class="screen" data-screen="victory">
         <div class="quest-card victory">
           <p class="kicker">Victory Unlocked</p>
-          <h2>Quest complete.</h2>
-          <p class="lead"><span data-team-inline>your team</span>, show this screen to Abhi. You have officially earned birthday bragging rights.</p>
+          <h2>The Birthday Core is unlocked.</h2>
+          <p class="lead"><span data-team-inline>your team</span>, you recovered all seven fragments and opened the final lock. Show this screen to Abhi to claim victory, bragging rights, and whatever birthday reward he has been pretending not to plan.</p>
           <button class="primary-action" type="button" data-restart>Play Again</button>
         </div>
       </section>

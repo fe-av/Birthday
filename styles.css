@@ -150,6 +150,39 @@ input {
   border-bottom: 3px solid #111111;
 }
 
+.progress-strip {
+  height: 18px;
+  margin: -8px 0 16px;
+  border: 3px solid #111111;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.progress-strip span {
+  display: block;
+  width: calc((var(--step) / 7) * 100%);
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--pink),
+    var(--pink) 10px,
+    var(--gold) 10px,
+    var(--gold) 20px
+  );
+}
+
+.quest-log {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border: 3px solid #111111;
+  border-radius: 8px;
+  background: #fff8e8;
+  font-weight: 800;
+  line-height: 1.45;
+  box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
 h1,
 h2 {
   margin: 14px 0 12px;
@@ -440,6 +473,40 @@ button:hover {
 
 .upload-card input {
   display: none;
+}
+
+.form-portal {
+  gap: 12px;
+  text-align: center;
+}
+
+.form-portal p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.form-portal a {
+  display: inline-block;
+  justify-self: center;
+  text-decoration: none;
+}
+
+.checkbox-line {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 18px 0;
+  padding: 14px;
+  border: 3px solid #111111;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.checkbox-line input {
+  width: 22px;
+  min-height: 22px;
+  accent-color: var(--pink);
 }
 
 .selfie-preview {
