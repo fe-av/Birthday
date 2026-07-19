@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abhishek's Birthday Quest</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="panel intro active" data-screen="intro">
+        <p class="kicker">Birthday Quest</p>
+        <h1>The game begins now.</h1>
+        <p class="lead">Click here to begin the game. You need to pass 3 levels to win.</p>
+        <button class="primary-action" type="button" data-start>Begin Game</button>
+      </section>
+
+      <section class="panel" data-screen="level-1">
+        <div class="topline">
+          <span>Level 1 of 3</span>
+          <span class="status">Memory Check</span>
+        </div>
+        <h2>Where did Abhishek spend his birthday in 2023?</h2>
+        <p class="hint">Hint: check his Instagram post.</p>
+        <form class="answer-form" data-level-one-form>
+          <label for="country-answer">Country</label>
+          <input id="country-answer" name="country" autocomplete="off" placeholder="Type the country">
+          <button type="submit">Submit Answer</button>
+        </form>
+        <p class="feedback" data-level-one-feedback aria-live="polite"></p>
+      </section>
+
+      <section class="panel" data-screen="level-2">
+        <div class="topline">
+          <span>Level 2 of 3</span>
+          <span class="status">Puzzle Lock</span>
+        </div>
+        <h2>Crack the birthday code.</h2>
+        <p class="hint">Arrange these words into the correct sentence, then press unlock.</p>
+        <div class="word-bank" data-word-bank></div>
+        <div class="drop-zone" data-drop-zone aria-label="Selected words"></div>
+        <div class="button-row">
+          <button type="button" data-reset-words>Reset</button>
+          <button type="button" data-check-words>Unlock Level 3</button>
+        </div>
+        <p class="feedback" data-level-two-feedback aria-live="polite"></p>
+      </section>
+
+      <section class="panel" data-screen="level-3">
+        <div class="topline">
+          <span>Level 3 of 3</span>
+          <span class="status">Reaction Test</span>
+        </div>
+        <h2>Stop the timer on Abhi's birthday number.</h2>
+        <p class="hint">Press stop when the number lands on <strong>23</strong>.</p>
+        <div class="timer-card">
+          <span data-rolling-number>00</span>
+        </div>
+        <div class="button-row">
+          <button type="button" data-start-timer>Start</button>
+          <button type="button" data-stop-timer>Stop</button>
+        </div>
+        <p class="feedback" data-level-three-feedback aria-live="polite"></p>
+      </section>
+
+      <section class="panel finale" data-screen="finale">
+        <p class="kicker">Final Stage</p>
+        <h2>You made it.</h2>
+        <p class="lead">To claim the win: take a selfie with Abhishek and submit it to him.</p>
+        <div class="selfie-box">
+          <span>Selfie Challenge</span>
+          <p>Find Abhishek, take the photo, and show him this final screen.</p>
+        </div>
+        <button class="primary-action" type="button" data-restart>Play Again</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
