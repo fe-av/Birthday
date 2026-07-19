@@ -33,7 +33,7 @@
             <span>Origin Scroll</span>
           </div>
           <div class="story-grid">
-            <img src="assets/abhi-manga-host.png" alt="Anime manga style Abhishek game host">
+            <img src="assets/abhi-manga-character.png" alt="Anime manga style Abhishek game host">
             <div>
               <p class="dialogue">Abhi appears from the dramatic birthday smoke and asks the first question. The answer is not written on the cake. That would be too easy.</p>
               <h2>When is my birthday?</h2>
@@ -117,10 +117,18 @@
             <span>Level 5 of 7</span>
             <span>Concert Portal</span>
           </div>
-          <p class="dialogue">Coordinates restored. Suddenly, <span data-team-inline>your team</span> and Abhi are at a concert. The lights go down. The crowd screams. The birthday host will only move forward if you pick the correct artist.</p>
-          <h2>Who is Abhi's favorite artist?</h2>
-          <p class="hint">Clue: the answer is not a solo artist. It points in exactly one direction.</p>
-          <div class="choice-grid" data-artist-choices></div>
+          <p class="dialogue">Coordinates restored. Suddenly, <span data-team-inline>your team</span> and Abhi are at a concert. The lights go down. The crowd screams. The stage audio crackles through the portal.</p>
+          <h2>Find out who is performing.</h2>
+          <p class="hint">Listen carefully, then type the artist/band name. No choice options. Earn it like a real concert detective.</p>
+          <div class="audio-card">
+            <span>Concert recording</span>
+            <audio controls preload="metadata" src="assets/drag-me-down.mp3"></audio>
+          </div>
+          <form class="answer-form" data-level-five-form>
+            <label for="artist-answer">Artist / band</label>
+            <input id="artist-answer" name="artist" autocomplete="off" placeholder="Type the artist or band">
+            <button type="submit">Submit Artist</button>
+          </form>
           <p class="feedback" data-level-five-feedback aria-live="polite"></p>
         </div>
       </section>
@@ -149,7 +157,7 @@
             <span>Final Boss</span>
           </div>
           <div class="portrait-wrap small">
-            <img src="assets/abhi-manga-host.png" alt="Anime manga style Abhishek final boss">
+            <img src="assets/abhi-manga-character.png" alt="Anime manga style Abhishek final boss">
           </div>
           <p class="kicker">Grand Finale</p>
           <h2>Unlock the code to win.</h2>

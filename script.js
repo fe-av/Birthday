@@ -1,14 +1,11 @@
 const screens = [...document.querySelectorAll("[data-screen]")];
 const teamInline = [...document.querySelectorAll("[data-team-inline]")];
 const letterBank = document.querySelector("[data-letter-bank]");
-const artistChoices = document.querySelector("[data-artist-choices]");
 const selfieUpload = document.querySelector("[data-selfie-upload]");
 const selfiePreview = document.querySelector("[data-selfie-preview]");
 
 let teamName = "your team";
 let selfieReady = false;
-
-const artistOptions = ["The Weeknd", "One Direction", "Taylor Swift", "Coldplay", "Ed Sheeran", "BTS"];
 
 function showScreen(name) {
   screens.forEach((screen) => {
@@ -61,26 +58,6 @@ function renderLetters() {
     tile.className = "letter-tile";
     tile.textContent = letter;
     letterBank.append(tile);
-  });
-}
-
-function renderArtistChoices() {
-  artistChoices.innerHTML = "";
-  artistOptions.forEach((choice) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "choice-card";
-    button.textContent = choice;
-    button.addEventListener("click", () => {
-      const feedback = document.querySelector("[data-level-five-feedback]");
-      if (normalize(choice) === "onedirection") {
-        setFeedback(feedback, "Correct. The concert portal opens in one direction only.", true);
-        window.setTimeout(() => showScreen("level-6"), 800);
-        return;
-      }
-      setFeedback(feedback, "Nope. The crowd is booing politely. Follow the hint.", false);
-    });
-    artistChoices.append(button);
   });
 }
 
@@ -150,6 +127,20 @@ document.querySelector("[data-check-coordinates]").addEventListener("click", () 
   setFeedback(feedback, "Wrong coordinates. Keep the N and E, but fix the numbers.", false);
 });
 
+document.querySelector("[data-level-five-form]").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const feedback = document.querySelector("[data-level-five-feedback]");
+  const answer = normalize(event.currentTarget.artist.value);
+
+  if (answer === "onedirection" || answer === "1direction") {
+    setFeedback(feedback, "Correct. The concert portal opens in one direction only.", true);
+    window.setTimeout(() => showScreen("level-6"), 800);
+    return;
+  }
+
+  setFeedback(feedback, "Nope. Listen again. The portal wants the band name.", false);
+});
+
 selfieUpload.addEventListener("change", () => {
   const file = selfieUpload.files[0];
   const feedback = document.querySelector("[data-level-six-feedback]");
@@ -206,4 +197,3 @@ document.querySelector("[data-restart]").addEventListener("click", () => {
 });
 
 renderLetters();
-renderArtistChoices();
