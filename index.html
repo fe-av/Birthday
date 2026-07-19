@@ -3,75 +3,163 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Abhishek's Birthday Quest</title>
+    <title>Abhishek's Seven-Level Birthday Quest</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <main class="game-shell">
-      <section class="panel intro active" data-screen="intro">
-        <p class="kicker">Birthday Quest</p>
-        <h1>The game begins now.</h1>
-        <p class="lead">Click here to begin the game. You need to pass 3 levels to win.</p>
-        <button class="primary-action" type="button" data-start>Begin Game</button>
+      <section class="screen intro active" data-screen="intro">
+        <div class="hero-card">
+          <div class="portrait-wrap">
+            <img src="assets/abhi.jpg" alt="Abhishek wearing sunglasses and a red cap">
+          </div>
+          <div class="speech">
+            <p class="kicker">Anime Birthday Arc</p>
+            <h1>The Seven-Level Birthday Quest begins now.</h1>
+            <p class="lead">Gather your team, survive the clues, and reach the final boss. Only then can you claim birthday glory.</p>
+            <form class="team-form" data-team-form>
+              <label for="team-names">Team player names</label>
+              <input id="team-names" name="teamNames" autocomplete="off" placeholder="Example: Alex, Kaeli, Chris">
+              <button class="primary-action" type="submit">Begin Level 1</button>
+            </form>
+            <p class="feedback" data-team-feedback aria-live="polite"></p>
+          </div>
+        </div>
       </section>
 
-      <section class="panel" data-screen="level-1">
-        <div class="topline">
-          <span>Level 1 of 3</span>
-          <span class="status">Memory Check</span>
+      <section class="screen" data-screen="level-1">
+        <div class="quest-card">
+          <div class="topline">
+            <span>Level 1 of 7</span>
+            <span>Origin Scroll</span>
+          </div>
+          <div class="story-grid">
+            <img src="assets/abhi.jpg" alt="Abhishek game host">
+            <div>
+              <p class="dialogue">Abhi appears from the dramatic birthday smoke and asks the first question. The answer is not written on the cake. That would be too easy.</p>
+              <h2>When is my birthday?</h2>
+              <p class="hint">Tiny hint: sometimes Facebook remembers what humans forget.</p>
+              <form class="answer-form" data-level-one-form>
+                <label for="birthday-answer">Birthday</label>
+                <input id="birthday-answer" name="birthday" autocomplete="off" placeholder="Example: 1 jan 2000">
+                <button type="submit">Submit</button>
+              </form>
+              <p class="feedback" data-level-one-feedback aria-live="polite"></p>
+            </div>
+          </div>
         </div>
-        <h2>Where did Abhishek spend his birthday in 2023?</h2>
-        <p class="hint">Hint: check his Instagram post.</p>
-        <form class="answer-form" data-level-one-form>
-          <label for="country-answer">Country</label>
-          <input id="country-answer" name="country" autocomplete="off" placeholder="Type the country">
-          <button type="submit">Submit Answer</button>
-        </form>
-        <p class="feedback" data-level-one-feedback aria-live="polite"></p>
       </section>
 
-      <section class="panel" data-screen="level-2">
-        <div class="topline">
-          <span>Level 2 of 3</span>
-          <span class="status">Puzzle Lock</span>
+      <section class="screen" data-screen="level-2">
+        <div class="quest-card">
+          <div class="topline">
+            <span>Level 2 of 7</span>
+            <span>Lost Passport Arc</span>
+          </div>
+          <p class="dialogue">With the birthday date restored, <span data-team-inline>your team</span> unlocks a travel memory. A passport stamp glows. One country is missing.</p>
+          <h2>What country did Abhishek spend his birthday in 2023?</h2>
+          <p class="hint">Hint: check the Instagram trail.</p>
+          <form class="answer-form" data-level-two-form>
+            <label for="country-answer">Country</label>
+            <input id="country-answer" name="country" autocomplete="off" placeholder="Type the country">
+            <button type="submit">Submit</button>
+          </form>
+          <p class="feedback" data-level-two-feedback aria-live="polite"></p>
         </div>
-        <h2>Crack the birthday code.</h2>
-        <p class="hint">Arrange these words into the correct sentence, then press unlock.</p>
-        <div class="word-bank" data-word-bank></div>
-        <div class="drop-zone" data-drop-zone aria-label="Selected words"></div>
-        <div class="button-row">
-          <button type="button" data-reset-words>Reset</button>
-          <button type="button" data-check-words>Unlock Level 3</button>
-        </div>
-        <p class="feedback" data-level-two-feedback aria-live="polite"></p>
       </section>
 
-      <section class="panel" data-screen="level-3">
-        <div class="topline">
-          <span>Level 3 of 3</span>
-          <span class="status">Reaction Test</span>
+      <section class="screen" data-screen="level-3">
+        <div class="quest-card">
+          <div class="topline">
+            <span>Level 3 of 7</span>
+            <span>Letter Forge</span>
+          </div>
+          <p class="dialogue">The next clue is broken into letters. Rebuild the company name where Abhishek is working right now.</p>
+          <h2>Where is Abhishek working right now?</h2>
+          <div class="letter-bank" data-letter-bank></div>
+          <form class="answer-form" data-level-three-form>
+            <label for="work-answer">Unscrambled answer</label>
+            <input id="work-answer" name="workplace" autocomplete="off" placeholder="Company name">
+            <button type="submit">Lock Answer</button>
+          </form>
+          <p class="feedback" data-level-three-feedback aria-live="polite"></p>
         </div>
-        <h2>Stop the timer on Abhi's birthday number.</h2>
-        <p class="hint">Press stop when the number lands on <strong>23</strong>.</p>
-        <div class="timer-card">
-          <span data-rolling-number>00</span>
-        </div>
-        <div class="button-row">
-          <button type="button" data-start-timer>Start</button>
-          <button type="button" data-stop-timer>Stop</button>
-        </div>
-        <p class="feedback" data-level-three-feedback aria-live="polite"></p>
       </section>
 
-      <section class="panel finale" data-screen="finale">
-        <p class="kicker">Final Stage</p>
-        <h2>You made it.</h2>
-        <p class="lead">To claim the win: take a selfie with Abhishek and submit it to him.</p>
-        <div class="selfie-box">
-          <span>Selfie Challenge</span>
-          <p>Find Abhishek, take the photo, and show him this final screen.</p>
+      <section class="screen" data-screen="level-4">
+        <div class="quest-card linkedin">
+          <div class="topline">
+            <span>Level 4 of 7</span>
+            <span>LinkedIn Portal</span>
+          </div>
+          <p class="dialogue">A very serious professional portal opens. Find the person Abhi would most likely connect with for this birthday mission.</p>
+          <div class="profile-grid" data-profile-grid></div>
+          <p class="hint">Clue: choose the profile whose initials match Abhishek Vijayan, and whose headline sounds like birthday-energy plus structural-brain.</p>
+          <p class="feedback" data-level-four-feedback aria-live="polite"></p>
         </div>
-        <button class="primary-action" type="button" data-restart>Play Again</button>
+      </section>
+
+      <section class="screen" data-screen="level-5">
+        <div class="quest-card">
+          <div class="topline">
+            <span>Level 5 of 7</span>
+            <span>Cafe Combo</span>
+          </div>
+          <p class="dialogue">After all that detective work, <span data-team-inline>your team</span> and Abhi walk into a coffee place. The barista will only serve the secret combo in the correct order.</p>
+          <h2>Build the birthday cafe order.</h2>
+          <p class="hint">Clue: start with coffee, add cake, finish with celebration.</p>
+          <div class="choice-grid" data-cafe-choices></div>
+          <div class="combo-tray" data-cafe-tray aria-label="Selected cafe order"></div>
+          <div class="button-row">
+            <button type="button" data-reset-cafe>Reset Order</button>
+            <button type="button" data-check-cafe>Serve It</button>
+          </div>
+          <p class="feedback" data-level-five-feedback aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="level-6">
+        <div class="quest-card">
+          <div class="topline">
+            <span>Level 6 of 7</span>
+            <span>Selfie Proof</span>
+          </div>
+          <p class="dialogue">The story now demands evidence. Take a selfie with Abhishek and upload it here to unlock the final task.</p>
+          <label class="upload-card" for="selfie-upload">
+            <span>Upload selfie</span>
+            <input id="selfie-upload" type="file" accept="image/*" data-selfie-upload>
+          </label>
+          <img class="selfie-preview" data-selfie-preview alt="Uploaded selfie preview">
+          <button type="button" data-confirm-selfie>Confirm Selfie</button>
+          <p class="feedback" data-level-six-feedback aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="level-7">
+        <div class="quest-card finale">
+          <div class="topline">
+            <span>Level 7 of 7</span>
+            <span>Final Boss</span>
+          </div>
+          <div class="portrait-wrap small">
+            <img src="assets/abhi.jpg" alt="Abhishek final boss">
+          </div>
+          <p class="kicker">Grand Finale</p>
+          <h2>The Birthday Oath</h2>
+          <p class="lead"><span data-team-inline>your team</span> has cleared the seven gates. For the final task, stand with Abhi and say the oath out loud:</p>
+          <blockquote>We survived the birthday arc, respected the clues, and now demand cake.</blockquote>
+          <button class="primary-action" type="button" data-finish-game>Complete Quest</button>
+          <p class="feedback" data-level-seven-feedback aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="victory">
+        <div class="quest-card victory">
+          <p class="kicker">Victory Unlocked</p>
+          <h2>Quest complete.</h2>
+          <p class="lead"><span data-team-inline>your team</span>, show this screen to Abhi. You have officially earned birthday bragging rights.</p>
+          <button class="primary-action" type="button" data-restart>Play Again</button>
+        </div>
       </section>
     </main>
 

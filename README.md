@@ -1,6 +1,6 @@
-# Abhishek's Birthday Quest
+# Abhishek's Seven-Level Birthday Quest
 
-A small browser puzzle game for a birthday party.
+A seven-level browser puzzle game for a birthday party.
 
 ## Run Locally
 
@@ -13,7 +13,7 @@ The script starts a local server and opens the game in your browser.
 ## Publish With GitHub Pages
 
 1. Create a GitHub repository.
-2. Upload `index.html`, `styles.css`, `script.js`, `run_game.py`, and this `README.md`.
+2. Upload `index.html`, `styles.css`, `script.js`, `run_game.py`, this `README.md`, and the `assets` folder.
 3. In GitHub, go to `Settings > Pages`.
 4. Under `Build and deployment`, choose `Deploy from a branch`.
 5. Select the `main` branch and `/root` folder.
@@ -21,8 +21,16 @@ The script starts a local server and opens the game in your browser.
 
 ## Game Answers
 
-Level 1 answer: `France`
+Level 1 answer: `27 July 2002`
 
-Level 2 answer order: `Abhi birthday quest unlocked`
+Level 2 answer: `France`
 
-Level 3 target: stop the counter at `23`
+Level 3 answer: `Forell Elsesser`
+
+Level 4 answer: select `Abhishek Vijayan`
+
+Level 5 answer order: `Coffee`, `Cake`, `Celebration`
+
+Level 6: upload a selfie
+
+Level 7: say the birthday oath
