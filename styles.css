@@ -1,14 +1,14 @@
 :root {
   color-scheme: dark;
-  --bg: #07070c;
-  --panel: rgba(15, 16, 28, 0.94);
-  --panel-strong: #151629;
-  --text: #fff8ee;
-  --muted: #c7bdcf;
-  --line: rgba(255, 255, 255, 0.16);
+  --bg: #bfefff;
+  --panel: rgba(255, 255, 255, 0.95);
+  --panel-strong: #fff8e8;
+  --text: #121212;
+  --muted: #343434;
+  --line: rgba(0, 0, 0, 0.22);
   --gold: #ffd166;
   --pink: #ff6fb1;
-  --blue: #7cc7ff;
+  --blue: #2f9be6;
   --green: #79e6a3;
   --red: #ff7676;
 }
@@ -22,9 +22,9 @@ body {
   min-height: 100vh;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at 16% 12%, rgba(255, 111, 177, 0.28), transparent 25rem),
-    radial-gradient(circle at 84% 10%, rgba(124, 199, 255, 0.25), transparent 28rem),
-    linear-gradient(135deg, #080812 0%, #111223 48%, #080812 100%);
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.92), transparent 10rem),
+    radial-gradient(circle at 80% 14%, rgba(255, 255, 255, 0.72), transparent 13rem),
+    linear-gradient(180deg, #69c9ff 0%, #c7f4ff 52%, #fff7dc 100%);
   color: var(--text);
 }
 
@@ -55,12 +55,12 @@ input {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
+  box-shadow: 12px 14px 0 rgba(0, 0, 0, 0.18);
 }
 
 .hero-card {
   display: grid;
-  grid-template-columns: minmax(240px, 0.85fr) minmax(280px, 1.15fr);
+  grid-template-columns: minmax(310px, 1.1fr) minmax(280px, 0.9fr);
   gap: 24px;
   padding: clamp(18px, 4vw, 34px);
   align-items: center;
@@ -73,9 +73,9 @@ input {
 .portrait-wrap {
   position: relative;
   overflow: hidden;
-  border: 2px solid rgba(255, 209, 102, 0.62);
+  border: 4px solid #050505;
   border-radius: 8px;
-  background: #0a0b14;
+  background: #ffffff;
 }
 
 .portrait-wrap::after {
@@ -85,7 +85,7 @@ input {
   bottom: 14px;
   padding: 7px 10px;
   border-radius: 999px;
-  background: rgba(7, 7, 12, 0.78);
+  background: rgba(255, 255, 255, 0.88);
   color: var(--gold);
   font-size: 0.76rem;
   font-weight: 900;
@@ -107,13 +107,34 @@ input {
   margin: 0 auto 18px;
 }
 
+.speech,
+.quest-card {
+  position: relative;
+}
+
 .speech {
-  padding: 8px;
+  padding: clamp(18px, 4vw, 34px);
+  border: 4px solid #050505;
+  border-radius: 48% 42% 46% 40% / 18% 16% 22% 20%;
+  background: #ffffff;
+}
+
+.speech::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 48%;
+  width: 50px;
+  height: 34px;
+  background: #ffffff;
+  border-left: 4px solid #050505;
+  border-bottom: 4px solid #050505;
+  transform: rotate(34deg);
 }
 
 .kicker,
 .topline {
-  color: var(--gold);
+  color: #111111;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.78rem;
@@ -126,7 +147,7 @@ input {
   gap: 14px;
   padding-bottom: 16px;
   margin-bottom: 22px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 3px solid #111111;
 }
 
 h1,
@@ -152,7 +173,7 @@ h2 {
 }
 
 .dialogue {
-  border-left: 4px solid var(--pink);
+  border-left: 5px solid var(--pink);
   padding-left: 14px;
 }
 
@@ -174,14 +195,14 @@ input {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0 14px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #ffffff;
   color: var(--text);
   outline: none;
 }
 
 input:focus {
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(124, 199, 255, 0.16);
+  box-shadow: 0 0 0 3px rgba(47, 155, 230, 0.18);
 }
 
 button,
@@ -190,6 +211,7 @@ button,
   border-radius: 8px;
   padding: 13px 18px;
   cursor: pointer;
+  border: 3px solid #111111;
   background: linear-gradient(135deg, var(--gold), #ff9f1c);
   color: #1a1205;
   font-weight: 900;
@@ -201,7 +223,7 @@ button:hover {
 
 .story-grid {
   display: grid;
-  grid-template-columns: 170px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 22px;
   align-items: start;
 }
@@ -209,7 +231,7 @@ button:hover {
 .story-grid img {
   aspect-ratio: 1;
   border-radius: 8px;
-  border: 1px solid var(--line);
+  border: 4px solid #111111;
 }
 
 .letter-bank,
@@ -253,7 +275,7 @@ button:hover {
 
 .profile-card strong {
   display: block;
-  color: var(--blue);
+  color: #0b69a8;
   font-size: 1.1rem;
   margin-bottom: 8px;
 }
@@ -276,7 +298,7 @@ button:hover {
   padding: 12px;
   border: 1px dashed rgba(255, 209, 102, 0.58);
   border-radius: 8px;
-  background: rgba(255, 209, 102, 0.08);
+  background: #fff8e8;
 }
 
 .button-row {
@@ -287,8 +309,8 @@ button:hover {
 }
 
 .button-row button:first-child {
-  background: #2b2d42;
-  color: var(--text);
+  background: #111111;
+  color: #ffffff;
 }
 
 .upload-card {
@@ -298,7 +320,7 @@ button:hover {
   margin: 22px 0;
   border: 2px dashed rgba(124, 199, 255, 0.72);
   border-radius: 8px;
-  background: rgba(124, 199, 255, 0.08);
+  background: #ffffff;
   cursor: pointer;
 }
 
@@ -345,7 +367,7 @@ blockquote {
   padding: 20px;
   border: 1px solid rgba(255, 209, 102, 0.5);
   border-radius: 8px;
-  background: rgba(255, 209, 102, 0.08);
+  background: #fff8e8;
   color: var(--gold);
   font-size: clamp(1.3rem, 3vw, 2rem);
   font-weight: 900;

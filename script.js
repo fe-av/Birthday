@@ -10,8 +10,8 @@ const selfiePreview = document.querySelector("[data-selfie-preview]");
 let teamName = "your team";
 let selfieReady = false;
 
-const workplaceLetters = "FORELLELSESSER".split("");
 const cafeOrder = ["Coffee", "Cake", "Celebration"];
+const requiredOath = "we survived the birthday arc respected the clues and now demand cake";
 const cafeOptions = ["Confetti", "Coffee", "Cake", "Structural Drawings", "Celebration", "Mystery Sandwich"];
 const profileOptions = [
   {
@@ -143,7 +143,7 @@ document.querySelector("[data-level-one-form]").addEventListener("submit", (even
   const answer = normalizeDate(event.currentTarget.birthday.value);
   const feedback = document.querySelector("[data-level-one-feedback]");
 
-  if (answer === "27072002" || answer === "07272002" || answer === "27200207") {
+  if (answer === "27072002" || answer === "07272002") {
     setFeedback(feedback, "Correct. The cake calendar has accepted your offering.", true);
     window.setTimeout(() => showScreen("level-2"), 800);
     return;
@@ -227,10 +227,18 @@ document.querySelector("[data-confirm-selfie]").addEventListener("click", () => 
   window.setTimeout(() => showScreen("level-7"), 800);
 });
 
-document.querySelector("[data-finish-game]").addEventListener("click", () => {
+document.querySelector("[data-level-seven-form]").addEventListener("submit", (event) => {
+  event.preventDefault();
   const feedback = document.querySelector("[data-level-seven-feedback]");
-  setFeedback(feedback, "Oath accepted. Victory is loading.", true);
-  window.setTimeout(() => showScreen("victory"), 900);
+  const answer = normalize(event.currentTarget.oath.value);
+
+  if (answer === normalize(requiredOath)) {
+    setFeedback(feedback, "Oath accepted. Victory is loading.", true);
+    window.setTimeout(() => showScreen("victory"), 900);
+    return;
+  }
+
+  setFeedback(feedback, "Almost. Type the oath exactly like the final manga panel demands.", false);
 });
 
 document.querySelector("[data-restart]").addEventListener("click", () => {

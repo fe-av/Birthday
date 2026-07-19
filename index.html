@@ -11,7 +11,7 @@
       <section class="screen intro active" data-screen="intro">
         <div class="hero-card">
           <div class="portrait-wrap">
-            <img src="assets/abhi.jpg" alt="Abhishek wearing sunglasses and a red cap">
+            <img src="assets/abhi-manga-host.png" alt="Anime manga style Abhishek birthday quest host">
           </div>
           <div class="speech">
             <p class="kicker">Anime Birthday Arc</p>
@@ -34,7 +34,7 @@
             <span>Origin Scroll</span>
           </div>
           <div class="story-grid">
-            <img src="assets/abhi.jpg" alt="Abhishek game host">
+            <img src="assets/abhi-manga-host.png" alt="Anime manga style Abhishek game host">
             <div>
               <p class="dialogue">Abhi appears from the dramatic birthday smoke and asks the first question. The answer is not written on the cake. That would be too easy.</p>
               <h2>When is my birthday?</h2>
@@ -142,13 +142,17 @@
             <span>Final Boss</span>
           </div>
           <div class="portrait-wrap small">
-            <img src="assets/abhi.jpg" alt="Abhishek final boss">
+            <img src="assets/abhi-manga-host.png" alt="Anime manga style Abhishek final boss">
           </div>
           <p class="kicker">Grand Finale</p>
           <h2>The Birthday Oath</h2>
-          <p class="lead"><span data-team-inline>your team</span> has cleared the seven gates. For the final task, stand with Abhi and say the oath out loud:</p>
+          <p class="lead"><span data-team-inline>your team</span> has cleared six gates. For the final task, stand with Abhi and enter the oath exactly:</p>
           <blockquote>We survived the birthday arc, respected the clues, and now demand cake.</blockquote>
-          <button class="primary-action" type="button" data-finish-game>Complete Quest</button>
+          <form class="answer-form" data-level-seven-form>
+            <label for="oath-answer">Birthday oath</label>
+            <input id="oath-answer" name="oath" autocomplete="off" placeholder="Type the oath exactly">
+            <button class="primary-action" type="submit">Complete Quest</button>
+          </form>
           <p class="feedback" data-level-seven-feedback aria-live="polite"></p>
         </div>
       </section>
