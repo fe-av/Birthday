@@ -101,7 +101,7 @@
           <p class="quest-log">Recovered: Origin, Passport, Work. The map room has unlocked.</p>
           <p class="dialogue"><span data-team-inline>your team</span> steps into a glowing map room. A campus marker pulses on the floor, but the numbers have been smudged by the Birthday Core. The direction letters survived: N and E.</p>
           <h2>Restore Abhi's undergrad coordinates.</h2>
-          <p class="hint">Fill only the missing numbers. The answer must match the latitude and longitude exactly enough to open the next gate.</p>
+          <p class="hint">Fill only the missing numbers. The Birthday Core allows a tolerance of 0.5, so each coordinate only needs to land close enough to the true latitude and longitude.</p>
           <div class="coordinate-card">
             <label for="latitude-answer">Latitude</label>
             <div class="coordinate-row">
@@ -173,22 +173,26 @@
             <img src="assets/abhi-manga-character.png" alt="Anime manga style Abhishek final boss">
           </div>
           <p class="kicker">Grand Finale</p>
-          <h2>Unlock the code to win.</h2>
-          <p class="lead"><span data-team-inline>your team</span> reaches the sealed chamber. Six fragments orbit the final lock. Four digits remain. Three clues point to the code. One wrong number keeps the Birthday Core closed.</p>
-          <div class="lock-box" aria-label="Four digit lock">
+          <h2>Unlock the password to win.</h2>
+          <p class="lead"><span data-team-inline>your team</span> reaches the sealed chamber. Six fragments orbit the final lock. Eight characters remain. Two final clues point to the password. One wrong character keeps the Birthday Core closed.</p>
+          <div class="lock-box" aria-label="Eight character password lock">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
           </div>
           <ul class="clue-list">
-            <li>Digit 1: Number of months Abhishek worked as a bridge design engineer on the East Coast in 2025. Clue: LinkedIn knows.</li>
-            <li>Digit 2: Last digit of Abhi's phone number.</li>
-            <li>Digits 3 and 4: Hidden in this room. Go to the chart and look at the image Abhi drew there.</li>
+            <li>Characters 1 to 4: The year Abhi graduated.</li>
+            <li>Characters 5 to 8: Abhi's favorite color.</li>
+            <li>Combine them with no spaces to unlock the Birthday Core.</li>
           </ul>
           <form class="answer-form" data-level-seven-form>
-            <label for="code-answer">4-digit code</label>
-            <input id="code-answer" name="code" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="0000">
+            <label for="code-answer">8-character password</label>
+            <input id="code-answer" name="code" autocomplete="off" maxlength="8" placeholder="2026____">
             <button class="primary-action" type="submit">Complete Quest</button>
           </form>
           <p class="feedback" data-level-seven-feedback aria-live="polite"></p>

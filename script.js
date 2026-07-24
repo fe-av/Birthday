@@ -114,16 +114,18 @@ document.querySelector("[data-check-coordinates]").addEventListener("click", () 
   const latitude = document.querySelector("#latitude-answer").value.trim();
   const longitude = document.querySelector("#longitude-answer").value.trim();
   const feedback = document.querySelector("[data-level-four-feedback]");
-  const cleanLatitude = latitude.replace(/\s+/g, "");
-  const cleanLongitude = longitude.replace(/\s+/g, "");
+  const parsedLatitude = Number.parseFloat(latitude.replace(/[^\d.-]/g, ""));
+  const parsedLongitude = Number.parseFloat(longitude.replace(/[^\d.-]/g, ""));
+  const latitudeTolerance = Math.abs(parsedLatitude - 10.762);
+  const longitudeTolerance = Math.abs(parsedLongitude - 78.816);
 
-  if (cleanLatitude === "10.762" && cleanLongitude === "78.816") {
-    setFeedback(feedback, "Campus Fragment recovered. The map folds into a concert ticket.", true);
+  if (latitudeTolerance <= 0.5 && longitudeTolerance <= 0.5) {
+    setFeedback(feedback, "Campus Fragment recovered. The coordinates are close enough for the map to fold into a concert ticket.", true);
     window.setTimeout(() => showScreen("level-5"), 800);
     return;
   }
 
-  setFeedback(feedback, "Wrong coordinates. Keep the N and E, but fix the numbers.", false);
+  setFeedback(feedback, "Wrong coordinates. Keep the N and E, and get each number within 0.5 of the real campus coordinates.", false);
 });
 
 document.querySelector("[data-level-five-form]").addEventListener("submit", (event) => {
@@ -195,15 +197,15 @@ document.querySelector("[data-selfie-form]").addEventListener("submit", async (e
 document.querySelector("[data-level-seven-form]").addEventListener("submit", (event) => {
   event.preventDefault();
   const feedback = document.querySelector("[data-level-seven-feedback]");
-  const answer = event.currentTarget.code.value.trim();
+  const answer = normalize(event.currentTarget.code.value);
 
-  if (answer === "3600") {
+  if (answer === "2026blue") {
     setFeedback(feedback, "Final Fragment recovered. The Birthday Core is unlocking.", true);
     window.setTimeout(() => showScreen("victory"), 900);
     return;
   }
 
-  setFeedback(feedback, "Lock denied. Re-check the three clues and try the 4-digit code again.", false);
+  setFeedback(feedback, "Lock denied. Re-check the graduation year and favorite color, then try the 8-character password again.", false);
 });
 
 document.querySelector("[data-restart]").addEventListener("click", () => {

@@ -27,13 +27,13 @@ Level 2 answer: `France`
 
 Level 3 answer: `Forell Elsesser`
 
-Level 4 answers: latitude `10.762`, longitude `78.816`
+Level 4 answers: latitude `10.762`, longitude `78.816` with `0.5` tolerance
 
 Level 5 answer: `One Direction`
 
 Level 6: upload a selfie; Netlify function saves it to `selfies/` in this GitHub repo
 
-Level 7 answer: `3600`
+Level 7 answer: `2026BLUE`
 
 ## Selfie Upload Setup
 
