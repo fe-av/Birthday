@@ -1,3 +1,16 @@
 {
-  "entries": {}
+  "entries": {
+    "player-1785052834078-b3eb8c35168288": {
+      "playerId": "player-1785052834078-b3eb8c35168288",
+      "teamName": "Dayan",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 41,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-26T08:00:34.078Z",
+      "updatedAt": "2026-07-26T08:01:15.729Z"
+    }
+  }
 }
