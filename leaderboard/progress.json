@@ -15,14 +15,14 @@
     "player-1785097409570-ed6d3f78275668": {
       "playerId": "player-1785097409570-ed6d3f78275668",
       "teamName": "Aranya",
-      "level": 3,
-      "levelName": "Work Fragment",
-      "elapsedSeconds": 275,
-      "status": "Reached Level 3",
+      "level": 4,
+      "levelName": "Campus Coordinates",
+      "elapsedSeconds": 365,
+      "status": "Reached Level 4",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-26T20:23:29.569Z",
-      "updatedAt": "2026-07-26T20:28:05.070Z"
+      "updatedAt": "2026-07-26T20:29:34.630Z"
     }
   }
 }
