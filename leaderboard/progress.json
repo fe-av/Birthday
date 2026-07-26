@@ -10,6 +10,18 @@
       "selfieUploaded": true,
       "startedAt": "2026-07-26T06:47:56.216Z",
       "updatedAt": "2026-07-26T06:49:17.169Z"
+    },
+    "player-1785051770068-5051e881f9a508": {
+      "playerId": "player-1785051770068-5051e881f9a508",
+      "teamName": "kaeli",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 5,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-26T07:50:19.660Z",
+      "updatedAt": "2026-07-26T07:50:22.965Z"
     }
   }
 }
