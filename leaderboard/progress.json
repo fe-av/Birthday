@@ -3,13 +3,13 @@
     "player-1785048476216-8c9fe749e96618": {
       "playerId": "player-1785048476216-8c9fe749e96618",
       "teamName": "Alex",
-      "level": 6,
-      "levelName": "Real-World Proof",
-      "elapsedSeconds": 46,
-      "status": "Reached Level 6",
-      "selfieUploaded": false,
+      "level": 7,
+      "levelName": "Final Code Lock",
+      "elapsedSeconds": 66,
+      "status": "Final lock",
+      "selfieUploaded": true,
       "startedAt": "2026-07-26T06:47:56.216Z",
-      "updatedAt": "2026-07-26T06:48:42.605Z"
+      "updatedAt": "2026-07-26T06:49:02.664Z"
     }
   }
 }
