@@ -5,7 +5,7 @@ const finishedTeams = document.querySelector("[data-finished-teams]");
 const leadingLevel = document.querySelector("[data-leading-level]");
 const lastRefresh = document.querySelector("[data-last-refresh]");
 const refreshButton = document.querySelector("[data-refresh-dashboard]");
-const API_BASE_URL = "https://abhi.vijayan-62b.workers.dev/";
+const API_BASE_URL = "https://abhi.vijayan-62b.workers.dev";
 let adminCode = window.sessionStorage.getItem("birthdayQuestAdminCode") || "";
 
 function formatDuration(totalSeconds) {
