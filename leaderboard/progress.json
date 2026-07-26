@@ -15,14 +15,14 @@
     "player-1785097409570-ed6d3f78275668": {
       "playerId": "player-1785097409570-ed6d3f78275668",
       "teamName": "Aranya",
-      "level": 2,
-      "levelName": "Passport Fragment",
-      "elapsedSeconds": 217,
-      "status": "Reached Level 2",
+      "level": 3,
+      "levelName": "Work Fragment",
+      "elapsedSeconds": 275,
+      "status": "Reached Level 3",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-26T20:23:29.569Z",
-      "updatedAt": "2026-07-26T20:27:06.642Z"
+      "updatedAt": "2026-07-26T20:28:05.070Z"
     }
   }
 }
