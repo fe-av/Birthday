@@ -1,16 +1,3 @@
 {
-  "entries": {
-    "player-1785052834078-b3eb8c35168288": {
-      "playerId": "player-1785052834078-b3eb8c35168288",
-      "teamName": "Aha",
-      "level": 2,
-      "levelName": "Origin Fragment",
-      "elapsedSeconds": 4,
-      "status": "Started Level 1",
-      "selfieUploaded": false,
-      "selfieUrl": "",
-      "startedAt": "2026-07-26T08:23:41.235Z",
-      "updatedAt": "2026-07-26T08:24:25.942Z"
-    }
-  }
+  "entries": {}
 }
