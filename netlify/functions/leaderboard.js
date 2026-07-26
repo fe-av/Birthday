@@ -30,6 +30,20 @@ function sanitizePlayerId(value) {
     .slice(0, 64);
 }
 
+function sanitizeUrl(value) {
+  const clean = String(value || "").trim();
+  if (!clean) return "";
+
+  try {
+    const parsed = new URL(clean);
+    if (parsed.protocol !== "https:") return "";
+    if (!["github.com", "raw.githubusercontent.com"].includes(parsed.hostname)) return "";
+    return parsed.toString();
+  } catch (error) {
+    return "";
+  }
+}
+
 async function githubRequest(path, options = {}) {
   const token = process.env.GITHUB_TOKEN;
   if (!token) {
@@ -106,8 +120,25 @@ function publicEntries(entries) {
       elapsedSeconds: entry.elapsedSeconds,
       status: entry.status,
       selfieUploaded: Boolean(entry.selfieUploaded),
+      selfieUrl: entry.selfieUrl || "",
       updatedAt: entry.updatedAt,
+      playerId: entry.playerId,
     }));
+}
+
+function requireAdminCode(payload) {
+  const adminCode = process.env.LEADERBOARD_ADMIN_CODE;
+  if (!adminCode) {
+    const error = new Error("Server is missing LEADERBOARD_ADMIN_CODE.");
+    error.statusCode = 500;
+    throw error;
+  }
+
+  if (String(payload.adminCode || "") !== adminCode) {
+    const error = new Error("Invalid admin code.");
+    error.statusCode = 403;
+    throw error;
+  }
 }
 
 exports.handler = async (event) => {
@@ -115,6 +146,33 @@ exports.handler = async (event) => {
     if (event.httpMethod === "GET") {
       const state = await readLeaderboard();
       return json(200, { ok: true, entries: publicEntries(state.entries), updatedAt: new Date().toISOString() });
+    }
+
+    if (event.httpMethod === "DELETE") {
+      const payload = JSON.parse(event.body || "{}");
+      requireAdminCode(payload);
+
+      const playerId = sanitizePlayerId(payload.playerId);
+      if (!playerId) {
+        return json(400, { ok: false, error: "Missing player id." });
+      }
+
+      for (let attempt = 0; attempt < 3; attempt += 1) {
+        const state = await readLeaderboard();
+        const deletedEntry = state.entries[playerId];
+        delete state.entries[playerId];
+
+        try {
+          await writeLeaderboard(state, state.sha, `Delete birthday leaderboard entry ${deletedEntry ? deletedEntry.teamName : playerId}`);
+          return json(200, { ok: true });
+        } catch (error) {
+          if (error.status !== 409 || attempt === 2) {
+            throw error;
+          }
+        }
+      }
+
+      return json(500, { ok: false, error: "Leaderboard delete conflict." });
     }
 
     if (event.httpMethod !== "POST") {
@@ -142,6 +200,7 @@ exports.handler = async (event) => {
         elapsedSeconds,
         status: sanitizeText(payload.status, previous.status || "Playing"),
         selfieUploaded: Boolean(payload.selfieUploaded || previous.selfieUploaded),
+        selfieUrl: sanitizeUrl(payload.selfieUrl) || previous.selfieUrl || "",
         startedAt: previous.startedAt || payload.startedAt || now,
         updatedAt: now,
       };
@@ -164,6 +223,6 @@ exports.handler = async (event) => {
 
     return json(500, { ok: false, error: "Leaderboard update conflict." });
   } catch (error) {
-    return json(500, { ok: false, error: error.message || "Leaderboard failed." });
+    return json(error.statusCode || 500, { ok: false, error: error.message || "Leaderboard failed." });
   }
 };

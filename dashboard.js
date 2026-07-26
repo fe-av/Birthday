@@ -5,6 +5,7 @@ const finishedTeams = document.querySelector("[data-finished-teams]");
 const leadingLevel = document.querySelector("[data-leading-level]");
 const lastRefresh = document.querySelector("[data-last-refresh]");
 const refreshButton = document.querySelector("[data-refresh-dashboard]");
+let adminCode = window.sessionStorage.getItem("birthdayQuestAdminCode") || "";
 
 function formatDuration(totalSeconds) {
   const minutes = Math.floor(totalSeconds / 60);
@@ -21,6 +22,34 @@ function formatUpdatedAt(value) {
   }).format(new Date(value));
 }
 
+function escapeHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function renderSelfie(entry) {
+  if (!entry.selfieUploaded) {
+    return '<span class="selfie-state pending">Pending</span>';
+  }
+
+  if (!entry.selfieUrl) {
+    return '<span class="selfie-state uploaded">Uploaded</span>';
+  }
+
+  const safeUrl = escapeHtml(entry.selfieUrl);
+  const safeName = escapeHtml(entry.teamName);
+  return `
+    <a class="selfie-thumb-link" href="${safeUrl}" target="_blank" rel="noopener">
+      <img class="leaderboard-selfie" src="${safeUrl}" alt="Selfie uploaded by ${safeName}">
+      <span>View</span>
+    </a>
+  `;
+}
+
 function renderEntries(entries) {
   totalTeams.textContent = entries.length;
   finishedTeams.textContent = entries.filter((entry) => entry.status === "Finished").length;
@@ -28,7 +57,7 @@ function renderEntries(entries) {
   lastRefresh.textContent = formatUpdatedAt(new Date().toISOString());
 
   if (!entries.length) {
-    leaderboardBody.innerHTML = '<tr><td colspan="7">Waiting for teams to start...</td></tr>';
+    leaderboardBody.innerHTML = '<tr><td colspan="8">Waiting for teams to start...</td></tr>';
     return;
   }
 
@@ -38,12 +67,17 @@ function renderEntries(entries) {
       return `
         <tr>
           <td><strong>#${index + 1}</strong></td>
-          <td>${entry.teamName}</td>
-          <td>${levelText}</td>
-          <td><span class="status-pill">${entry.status}</span></td>
+          <td>${escapeHtml(entry.teamName)}</td>
+          <td>${escapeHtml(levelText)}</td>
+          <td><span class="status-pill">${escapeHtml(entry.status)}</span></td>
           <td>${formatDuration(entry.elapsedSeconds)}</td>
-          <td>${entry.selfieUploaded ? "Uploaded" : "Pending"}</td>
+          <td>${renderSelfie(entry)}</td>
           <td>${formatUpdatedAt(entry.updatedAt)}</td>
+          <td>
+            <button type="button" class="delete-player" data-delete-player="${escapeHtml(entry.playerId)}" data-team-name="${escapeHtml(entry.teamName)}">
+              Delete
+            </button>
+          </td>
         </tr>
       `;
     })
@@ -69,6 +103,52 @@ async function loadDashboard() {
     feedback.className = "feedback bad";
   }
 }
+
+async function deletePlayer(playerId, teamName) {
+  if (!adminCode) {
+    adminCode = window.prompt("Enter leaderboard admin code:") || "";
+    if (adminCode) {
+      window.sessionStorage.setItem("birthdayQuestAdminCode", adminCode);
+    }
+  }
+
+  if (!adminCode) return;
+
+  const confirmed = window.confirm(`Delete ${teamName || "this player"} from the leaderboard?`);
+  if (!confirmed) return;
+
+  try {
+    const response = await fetch("/.netlify/functions/leaderboard", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ playerId, adminCode }),
+    });
+    const result = await response.json();
+
+    if (!response.ok || !result.ok) {
+      if (response.status === 403) {
+        adminCode = "";
+        window.sessionStorage.removeItem("birthdayQuestAdminCode");
+      }
+      throw new Error(result.error || "Could not delete player.");
+    }
+
+    feedback.textContent = "Player deleted.";
+    feedback.className = "feedback good";
+    loadDashboard();
+  } catch (error) {
+    feedback.textContent = `Delete failed: ${error.message}`;
+    feedback.className = "feedback bad";
+  }
+}
+
+leaderboardBody.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-delete-player]");
+  if (!button) return;
+  deletePlayer(button.dataset.deletePlayer, button.dataset.teamName);
+});
 
 refreshButton.addEventListener("click", loadDashboard);
 loadDashboard();

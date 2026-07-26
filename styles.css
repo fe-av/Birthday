@@ -585,11 +585,6 @@ blockquote {
   font-size: clamp(2.1rem, 6vw, 4.8rem);
 }
 
-.dashboard-link {
-  text-decoration: none;
-  white-space: nowrap;
-}
-
 .dashboard-stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -673,6 +668,51 @@ blockquote {
   background: var(--gold);
   font-weight: 900;
   white-space: nowrap;
+}
+
+.selfie-state {
+  display: inline-block;
+  font-weight: 900;
+}
+
+.selfie-state.pending {
+  color: var(--muted);
+}
+
+.selfie-state.uploaded {
+  color: #126a34;
+}
+
+.selfie-thumb-link {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  color: #111111;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.leaderboard-selfie {
+  width: 58px;
+  height: 58px;
+  border: 3px solid #111111;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #fff8e8;
+}
+
+.delete-player {
+  padding: 8px 10px;
+  border: 2px solid #111111;
+  border-radius: 8px;
+  background: #ffe2e2;
+  color: #111111;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.delete-player:hover {
+  transform: translateY(-1px);
 }
 
 @keyframes pop-in {

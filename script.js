@@ -240,7 +240,10 @@ document.querySelector("[data-selfie-form]").addEventListener("submit", async (e
     }
 
     setFeedback(feedback, "Proof Fragment recovered. The selfie is saved in the quest archive.", true);
-    updateLeaderboard(7, "Reached final lock", { selfieUploaded: true });
+    updateLeaderboard(7, "Reached final lock", {
+      selfieUploaded: true,
+      selfieUrl: result.rawUrl || result.url || "",
+    });
     window.setTimeout(() => showScreen("level-7"), 900);
   } catch (error) {
     setFeedback(feedback, `Upload failed: ${error.message}`, false);

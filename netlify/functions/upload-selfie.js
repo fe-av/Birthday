@@ -136,5 +136,6 @@ exports.handler = async (event) => {
     ok: true,
     path: repoPath,
     url: githubResult.content && githubResult.content.html_url,
+    rawUrl: `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/${repoPath}`,
   });
 };

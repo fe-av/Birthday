@@ -19,7 +19,8 @@ Use Netlify for the party version because selfie uploads and the live dashboard 
 3. In Netlify, go to `Site configuration > Environment variables`.
 4. Add `GITHUB_TOKEN`.
 5. The token needs permission to write repository contents for `fe-av/Birthday`.
-6. Redeploy the Netlify site.
+6. Add `LEADERBOARD_ADMIN_CODE`.
+7. Redeploy the Netlify site.
 
 Use these links:
 
@@ -74,4 +75,12 @@ Leaderboard progress is saved to:
 
 ```text
 leaderboard/progress.json
+```
+
+Selfie thumbnails show on the dashboard after Level 6 uploads succeed.
+
+To delete a player from the dashboard, click `Delete` on that row and enter the value you saved in Netlify as:
+
+```text
+LEADERBOARD_ADMIN_CODE
 ```
