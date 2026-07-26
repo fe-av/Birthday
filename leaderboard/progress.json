@@ -15,14 +15,14 @@
     "player-1785097409570-ed6d3f78275668": {
       "playerId": "player-1785097409570-ed6d3f78275668",
       "teamName": "Aranya",
-      "level": 4,
-      "levelName": "Campus Coordinates",
-      "elapsedSeconds": 365,
-      "status": "Reached Level 4",
+      "level": 5,
+      "levelName": "Concert Frequency",
+      "elapsedSeconds": 493,
+      "status": "Reached Level 5",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-26T20:23:29.569Z",
-      "updatedAt": "2026-07-26T20:29:34.630Z"
+      "updatedAt": "2026-07-26T20:31:43.114Z"
     }
   }
 }
