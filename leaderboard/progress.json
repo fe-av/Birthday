@@ -3,13 +3,13 @@
     "player-1785048476216-8c9fe749e96618": {
       "playerId": "player-1785048476216-8c9fe749e96618",
       "teamName": "Alex",
-      "level": 3,
-      "levelName": "Work Fragment",
-      "elapsedSeconds": 25,
-      "status": "Reached Level 3",
+      "level": 4,
+      "levelName": "Campus Coordinates",
+      "elapsedSeconds": 32,
+      "status": "Reached Level 4",
       "selfieUploaded": false,
       "startedAt": "2026-07-26T06:47:56.216Z",
-      "updatedAt": "2026-07-26T06:48:20.811Z"
+      "updatedAt": "2026-07-26T06:48:28.474Z"
     }
   }
 }
