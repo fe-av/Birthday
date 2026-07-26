@@ -1,3 +1,16 @@
 {
-  "entries": {}
+  "entries": {
+    "player-1785097426459-3dc4f6236e87c": {
+      "playerId": "player-1785097426459-3dc4f6236e87c",
+      "teamName": "SeraTwin",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 18,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-26T20:23:46.459Z",
+      "updatedAt": "2026-07-26T20:24:04.349Z"
+    }
+  }
 }
