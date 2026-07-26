@@ -3,13 +3,13 @@
     "player-1785048476216-8c9fe749e96618": {
       "playerId": "player-1785048476216-8c9fe749e96618",
       "teamName": "Alex",
-      "level": 2,
-      "levelName": "Passport Fragment",
-      "elapsedSeconds": 21,
-      "status": "Reached Level 2",
+      "level": 3,
+      "levelName": "Work Fragment",
+      "elapsedSeconds": 25,
+      "status": "Reached Level 3",
       "selfieUploaded": false,
       "startedAt": "2026-07-26T06:47:56.216Z",
-      "updatedAt": "2026-07-26T06:48:17.455Z"
+      "updatedAt": "2026-07-26T06:48:20.811Z"
     }
   }
 }
