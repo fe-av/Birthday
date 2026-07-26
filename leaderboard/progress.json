@@ -27,14 +27,14 @@
     "player-1785099347540-b3f4a2b9ba7ae": {
       "playerId": "player-1785099347540-b3f4a2b9ba7ae",
       "teamName": "Prat",
-      "level": 6,
-      "levelName": "Real-World Proof",
-      "elapsedSeconds": 439,
-      "status": "Reached Level 6",
-      "selfieUploaded": false,
-      "selfieUrl": "",
+      "level": 7,
+      "levelName": "Final Code Lock",
+      "elapsedSeconds": 557,
+      "status": "Final lock",
+      "selfieUploaded": true,
+      "selfieUrl": "https://raw.githubusercontent.com/fe-av/Birthday/main/selfies/prat-2026-07-26T21-05-01-758Z.jpg",
       "startedAt": "2026-07-26T20:55:47.540Z",
-      "updatedAt": "2026-07-26T21:03:06.376Z"
+      "updatedAt": "2026-07-26T21:05:04.126Z"
     }
   }
 }
