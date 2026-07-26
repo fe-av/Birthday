@@ -5,6 +5,55 @@ const selfieUpload = document.querySelector("[data-selfie-upload]");
 const selfiePreview = document.querySelector("[data-selfie-preview]");
 
 let teamName = "your team";
+const questStartedAt = Date.now();
+const playerId = getPlayerId();
+
+const levelNames = {
+  0: "Registered",
+  1: "Origin Fragment",
+  2: "Passport Fragment",
+  3: "Work Fragment",
+  4: "Campus Coordinates",
+  5: "Concert Frequency",
+  6: "Real-World Proof",
+  7: "Final Code Lock",
+};
+
+function getPlayerId() {
+  const storedId = window.localStorage.getItem("birthdayQuestPlayerId");
+  if (storedId) return storedId;
+
+  const newId = `player-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  window.localStorage.setItem("birthdayQuestPlayerId", newId);
+  return newId;
+}
+
+function elapsedSeconds() {
+  return Math.round((Date.now() - questStartedAt) / 1000);
+}
+
+async function updateLeaderboard(level, status, extra = {}) {
+  try {
+    await fetch("/.netlify/functions/leaderboard", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        playerId,
+        teamName,
+        level,
+        levelName: levelNames[level] || "Quest",
+        elapsedSeconds: elapsedSeconds(),
+        status,
+        startedAt: new Date(questStartedAt).toISOString(),
+        ...extra,
+      }),
+    });
+  } catch (error) {
+    console.warn("Leaderboard update failed", error);
+  }
+}
 
 function showScreen(name) {
   screens.forEach((screen) => {
@@ -65,6 +114,7 @@ document.querySelector("[data-team-form]").addEventListener("submit", (event) =>
   const feedback = document.querySelector("[data-team-feedback]");
   updateTeamName(event.currentTarget.teamNames.value);
   setFeedback(feedback, `${teamName}, your quest party is registered. The first page is turning.`, true);
+  updateLeaderboard(1, "Started Level 1");
   window.setTimeout(() => showScreen("level-1"), 700);
 });
 
@@ -75,6 +125,7 @@ document.querySelector("[data-level-one-form]").addEventListener("submit", (even
 
   if (answer === "27072002" || answer === "07272002") {
     setFeedback(feedback, "Origin Fragment recovered. The cake calendar stops glitching.", true);
+    updateLeaderboard(2, "Reached Level 2");
     window.setTimeout(() => showScreen("level-2"), 800);
     return;
   }
@@ -89,6 +140,7 @@ document.querySelector("[data-level-two-form]").addEventListener("submit", (even
 
   if (answer === "france") {
     setFeedback(feedback, "Passport Fragment recovered. The travel flashback is complete.", true);
+    updateLeaderboard(3, "Reached Level 3");
     window.setTimeout(() => showScreen("level-3"), 800);
     return;
   }
@@ -103,6 +155,7 @@ document.querySelector("[data-level-three-form]").addEventListener("submit", (ev
 
   if (answer === "forellelsesser") {
     setFeedback(feedback, "Work Fragment recovered. The letter forge cools down.", true);
+    updateLeaderboard(4, "Reached Level 4");
     window.setTimeout(() => showScreen("level-4"), 800);
     return;
   }
@@ -121,6 +174,7 @@ document.querySelector("[data-check-coordinates]").addEventListener("click", () 
 
   if (latitudeTolerance <= 0.5 && longitudeTolerance <= 0.5) {
     setFeedback(feedback, "Campus Fragment recovered. The coordinates are close enough for the map to fold into a concert ticket.", true);
+    updateLeaderboard(5, "Reached Level 5");
     window.setTimeout(() => showScreen("level-5"), 800);
     return;
   }
@@ -135,6 +189,7 @@ document.querySelector("[data-level-five-form]").addEventListener("submit", (eve
 
   if (answer === "onedirection" || answer === "1direction") {
     setFeedback(feedback, "Concert Fragment recovered. The sound gate opens in one direction only.", true);
+    updateLeaderboard(6, "Reached Level 6");
     window.setTimeout(() => showScreen("level-6"), 800);
     return;
   }
@@ -185,6 +240,7 @@ document.querySelector("[data-selfie-form]").addEventListener("submit", async (e
     }
 
     setFeedback(feedback, "Proof Fragment recovered. The selfie is saved in the quest archive.", true);
+    updateLeaderboard(7, "Reached final lock", { selfieUploaded: true });
     window.setTimeout(() => showScreen("level-7"), 900);
   } catch (error) {
     setFeedback(feedback, `Upload failed: ${error.message}`, false);
@@ -201,6 +257,7 @@ document.querySelector("[data-level-seven-form]").addEventListener("submit", (ev
 
   if (answer === "2026blue") {
     setFeedback(feedback, "Final Fragment recovered. The Birthday Core is unlocking.", true);
+    updateLeaderboard(7, "Finished", { selfieUploaded: true });
     window.setTimeout(() => showScreen("victory"), 900);
     return;
   }

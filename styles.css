@@ -389,7 +389,7 @@ button:hover {
 
 .lock-box {
   display: grid;
-  grid-template-columns: repeat(4, minmax(48px, 84px));
+  grid-template-columns: repeat(8, minmax(38px, 74px));
   justify-content: center;
   gap: 12px;
   margin: 24px auto;
@@ -553,6 +553,128 @@ blockquote {
   text-align: center;
 }
 
+.dashboard-page {
+  min-height: 100vh;
+}
+
+.dashboard-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0;
+}
+
+.dashboard-hero,
+.leaderboard-card,
+.dashboard-stats article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 8px 9px 0 rgba(0, 0, 0, 0.16);
+}
+
+.dashboard-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  align-items: center;
+  padding: clamp(20px, 4vw, 34px);
+}
+
+.dashboard-hero h1 {
+  margin-top: 6px;
+  font-size: clamp(2.1rem, 6vw, 4.8rem);
+}
+
+.dashboard-link {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 22px 0;
+}
+
+.dashboard-stats article {
+  padding: 18px;
+  text-align: center;
+}
+
+.dashboard-stats span {
+  display: block;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.dashboard-stats p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.leaderboard-card {
+  padding: clamp(18px, 4vw, 30px);
+}
+
+.leaderboard-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.leaderboard-head h2 {
+  margin: 4px 0 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.leaderboard-table-wrap {
+  overflow-x: auto;
+  border: 4px solid #111111;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 820px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 14px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.leaderboard-table th {
+  background: #fff8e8;
+  color: #111111;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.leaderboard-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 2px solid #111111;
+  border-radius: 999px;
+  background: var(--gold);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
 @keyframes pop-in {
   from {
     opacity: 0;
@@ -581,5 +703,18 @@ blockquote {
 
   .topline {
     display: grid;
+  }
+
+  .lock-box {
+    grid-template-columns: repeat(4, minmax(42px, 64px));
+  }
+
+  .dashboard-hero,
+  .leaderboard-head {
+    display: grid;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

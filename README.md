@@ -10,14 +10,23 @@ python run_game.py
 
 The script starts a local server and opens the game in your browser.
 
-## Publish With GitHub Pages
+## Publish With Netlify
 
-1. Create a GitHub repository.
-2. Upload `index.html`, `styles.css`, `script.js`, `run_game.py`, this `README.md`, and the `assets` folder.
-3. In GitHub, go to `Settings > Pages`.
-4. Under `Build and deployment`, choose `Deploy from a branch`.
-5. Select the `main` branch and `/root` folder.
-6. Save. GitHub will give you a public link after it deploys.
+Use Netlify for the party version because selfie uploads and the live dashboard need Netlify functions.
+
+1. Upload the full repo to GitHub.
+2. Deploy the repo on Netlify.
+3. In Netlify, go to `Site configuration > Environment variables`.
+4. Add `GITHUB_TOKEN`.
+5. The token needs permission to write repository contents for `fe-av/Birthday`.
+6. Redeploy the Netlify site.
+
+Use these links:
+
+```text
+https://YOUR-SITE.netlify.app/
+https://YOUR-SITE.netlify.app/dashboard.html
+```
 
 ## Game Answers
 
@@ -49,4 +58,20 @@ Selfies are committed to:
 
 ```text
 selfies/
+```
+
+## Live Dashboard
+
+Open this page on a laptop or projector:
+
+```text
+/dashboard.html
+```
+
+The game sends progress updates when a team starts, unlocks a level, uploads the selfie, and finishes. The dashboard refreshes automatically every 4 seconds.
+
+Leaderboard progress is saved to:
+
+```text
+leaderboard/progress.json
 ```

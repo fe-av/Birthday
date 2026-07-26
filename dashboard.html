@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Birthday Quest Live Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="dashboard-page">
+    <main class="dashboard-shell">
+      <header class="dashboard-hero">
+        <div>
+          <p class="kicker">Live Quest Control</p>
+          <h1>Birthday Quest Leaderboard</h1>
+          <p class="lead">Watch teams move through the seven fragments in real time. Ranking is based on highest level reached, then fastest elapsed time.</p>
+        </div>
+        <a class="primary-action dashboard-link" href="index.html">Open Game</a>
+      </header>
+
+      <section class="dashboard-stats" aria-label="Quest summary">
+        <article>
+          <span data-total-teams>0</span>
+          <p>Teams Registered</p>
+        </article>
+        <article>
+          <span data-finished-teams>0</span>
+          <p>Finished</p>
+        </article>
+        <article>
+          <span data-leading-level>0</span>
+          <p>Top Level</p>
+        </article>
+        <article>
+          <span data-last-refresh>--</span>
+          <p>Last Refresh</p>
+        </article>
+      </section>
+
+      <section class="leaderboard-card">
+        <div class="leaderboard-head">
+          <div>
+            <p class="kicker">Quest Progress</p>
+            <h2>Live Players</h2>
+          </div>
+          <button type="button" data-refresh-dashboard>Refresh Now</button>
+        </div>
+        <div class="leaderboard-table-wrap">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Team</th>
+                <th>Level</th>
+                <th>Status</th>
+                <th>Time</th>
+                <th>Selfie</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody data-leaderboard-body>
+              <tr>
+                <td colspan="7">Waiting for teams to start...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="feedback" data-dashboard-feedback aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
