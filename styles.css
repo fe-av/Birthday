@@ -557,19 +557,41 @@ blockquote {
   min-height: 100vh;
 }
 
-.dashboard-shell {
-  width: min(1180px, calc(100% - 32px));
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+  gap: 24px;
+  width: min(1440px, calc(100% - 32px));
   margin: 0 auto;
   padding: 28px 0;
+  align-items: start;
+}
+
+.dashboard-shell {
+  min-width: 0;
 }
 
 .dashboard-hero,
 .leaderboard-card,
-.dashboard-stats article {
+.dashboard-stats article,
+.dashboard-qr-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
   box-shadow: 8px 9px 0 rgba(0, 0, 0, 0.16);
+}
+
+.dashboard-qr-card {
+  position: sticky;
+  top: 28px;
+  padding: 14px;
+  background: #050505;
+}
+
+.dashboard-qr-card img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
 }
 
 .dashboard-hero {
@@ -900,6 +922,17 @@ blockquote {
 
   .lock-box {
     grid-template-columns: repeat(4, minmax(42px, 64px));
+  }
+
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+    width: min(1180px, calc(100% - 32px));
+  }
+
+  .dashboard-qr-card {
+    position: static;
+    max-width: 320px;
+    margin: 0 auto;
   }
 
   .dashboard-hero,
