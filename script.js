@@ -3,7 +3,7 @@ const teamInline = [...document.querySelectorAll("[data-team-inline]")];
 const letterBank = document.querySelector("[data-letter-bank]");
 const selfieUpload = document.querySelector("[data-selfie-upload]");
 const selfiePreview = document.querySelector("[data-selfie-preview]");
-const API_BASE_URL = "PASTE_CLOUDFLARE_WORKER_URL_HERE";
+const API_BASE_URL = "https://abhi.vijayan-62b.workers.dev/";
 
 let teamName = "your team";
 const questStartedAt = Date.now();
