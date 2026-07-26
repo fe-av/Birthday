@@ -27,14 +27,14 @@
     "player-1785099347540-b3f4a2b9ba7ae": {
       "playerId": "player-1785099347540-b3f4a2b9ba7ae",
       "teamName": "Prat",
-      "level": 1,
-      "levelName": "Origin Fragment",
-      "elapsedSeconds": 16,
-      "status": "Started Level 1",
+      "level": 2,
+      "levelName": "Passport Fragment",
+      "elapsedSeconds": 48,
+      "status": "Reached Level 2",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-26T20:55:47.540Z",
-      "updatedAt": "2026-07-26T20:56:03.607Z"
+      "updatedAt": "2026-07-26T20:56:35.319Z"
     }
   }
 }
