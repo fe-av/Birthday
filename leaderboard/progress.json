@@ -1,15 +1,3 @@
 {
-  "entries": {
-    "player-1785048476216-8c9fe749e96618": {
-      "playerId": "player-1785048476216-8c9fe749e96618",
-      "teamName": "Alex",
-      "level": 7,
-      "levelName": "Final Code Lock",
-      "elapsedSeconds": 81,
-      "status": "Finished",
-      "selfieUploaded": true,
-      "startedAt": "2026-07-26T06:47:56.216Z",
-      "updatedAt": "2026-07-26T06:49:17.169Z"
-    }
-  }
+  "entries": {}
 }
