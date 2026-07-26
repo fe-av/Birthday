@@ -3,14 +3,14 @@
     "player-1785097426459-3dc4f6236e87c": {
       "playerId": "player-1785097426459-3dc4f6236e87c",
       "teamName": "SeraTwin",
-      "level": 2,
-      "levelName": "Passport Fragment",
-      "elapsedSeconds": 39,
-      "status": "Reached Level 2",
+      "level": 3,
+      "levelName": "Work Fragment",
+      "elapsedSeconds": 70,
+      "status": "Reached Level 3",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-26T20:23:46.459Z",
-      "updatedAt": "2026-07-26T20:24:25.727Z"
+      "updatedAt": "2026-07-26T20:24:56.273Z"
     }
   }
 }
