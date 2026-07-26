@@ -15,14 +15,14 @@
     "player-1785051770068-5051e881f9a508": {
       "playerId": "player-1785051770068-5051e881f9a508",
       "teamName": "kaeli",
-      "level": 3,
-      "levelName": "Work Fragment",
-      "elapsedSeconds": 60,
-      "status": "Reached Level 3",
+      "level": 4,
+      "levelName": "Campus Coordinates",
+      "elapsedSeconds": 65,
+      "status": "Reached Level 4",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-26T08:14:37.114Z",
-      "updatedAt": "2026-07-26T08:15:35.311Z"
+      "updatedAt": "2026-07-26T08:15:40.342Z"
     }
   }
 }
