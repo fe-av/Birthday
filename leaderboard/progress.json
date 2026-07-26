@@ -15,14 +15,14 @@
     "player-1785051770068-5051e881f9a508": {
       "playerId": "player-1785051770068-5051e881f9a508",
       "teamName": "kaeli",
-      "level": 1,
-      "levelName": "Origin Fragment",
-      "elapsedSeconds": 4,
-      "status": "Started Level 1",
+      "level": 2,
+      "levelName": "Passport Fragment",
+      "elapsedSeconds": 55,
+      "status": "Reached Level 2",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-26T08:14:37.114Z",
-      "updatedAt": "2026-07-26T08:14:39.366Z"
+      "updatedAt": "2026-07-26T08:15:30.808Z"
     }
   }
 }
