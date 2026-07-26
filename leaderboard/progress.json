@@ -11,6 +11,18 @@
       "selfieUrl": "https://raw.githubusercontent.com/fe-av/Birthday/main/selfies/abh-2026-07-26T08-14-02-752Z.jpg",
       "startedAt": "2026-07-26T08:00:34.078Z",
       "updatedAt": "2026-07-26T08:14:20.414Z"
+    },
+    "player-1785051770068-5051e881f9a508": {
+      "playerId": "player-1785051770068-5051e881f9a508",
+      "teamName": "kaeli",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 4,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-26T08:14:37.114Z",
+      "updatedAt": "2026-07-26T08:14:39.366Z"
     }
   }
 }
