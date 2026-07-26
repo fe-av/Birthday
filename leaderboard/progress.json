@@ -15,14 +15,14 @@
     "player-1785051770068-5051e881f9a508": {
       "playerId": "player-1785051770068-5051e881f9a508",
       "teamName": "kaeli",
-      "level": 2,
-      "levelName": "Passport Fragment",
-      "elapsedSeconds": 55,
-      "status": "Reached Level 2",
+      "level": 3,
+      "levelName": "Work Fragment",
+      "elapsedSeconds": 60,
+      "status": "Reached Level 3",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-26T08:14:37.114Z",
-      "updatedAt": "2026-07-26T08:15:30.808Z"
+      "updatedAt": "2026-07-26T08:15:35.311Z"
     }
   }
 }
