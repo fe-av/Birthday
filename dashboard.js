@@ -5,6 +5,7 @@ const finishedTeams = document.querySelector("[data-finished-teams]");
 const leadingLevel = document.querySelector("[data-leading-level]");
 const lastRefresh = document.querySelector("[data-last-refresh]");
 const refreshButton = document.querySelector("[data-refresh-dashboard]");
+const API_BASE_URL = "PASTE_CLOUDFLARE_WORKER_URL_HERE";
 let adminCode = window.sessionStorage.getItem("birthdayQuestAdminCode") || "";
 
 function formatDuration(totalSeconds) {
@@ -86,7 +87,7 @@ function renderEntries(entries) {
 
 async function loadDashboard() {
   try {
-    const response = await fetch("/.netlify/functions/leaderboard", {
+    const response = await fetch(`${API_BASE_URL}/leaderboard`, {
       cache: "no-store",
     });
     const result = await response.json();
@@ -118,7 +119,7 @@ async function deletePlayer(playerId, teamName) {
   if (!confirmed) return;
 
   try {
-    const response = await fetch("/.netlify/functions/leaderboard", {
+    const response = await fetch(`${API_BASE_URL}/leaderboard`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
