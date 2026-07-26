@@ -15,14 +15,14 @@
     "player-1785051770068-5051e881f9a508": {
       "playerId": "player-1785051770068-5051e881f9a508",
       "teamName": "kaeli",
-      "level": 4,
-      "levelName": "Campus Coordinates",
-      "elapsedSeconds": 65,
-      "status": "Reached Level 4",
+      "level": 5,
+      "levelName": "Concert Frequency",
+      "elapsedSeconds": 79,
+      "status": "Reached Level 5",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-26T08:14:37.114Z",
-      "updatedAt": "2026-07-26T08:15:40.342Z"
+      "updatedAt": "2026-07-26T08:15:54.639Z"
     }
   }
 }
