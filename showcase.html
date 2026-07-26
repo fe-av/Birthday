@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Selfie Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="showcase-page">
+    <main class="showcase-shell">
+      <section class="showcase-stage" aria-label="Uploaded selfie slideshow">
+        <div class="showcase-bg" data-showcase-bg></div>
+        <div class="showcase-film-line top"></div>
+        <div class="showcase-film-line bottom"></div>
+
+        <div class="showcase-copy">
+          <p class="kicker">Birthday Quest Premiere</p>
+          <h1 data-showcase-title>Selfie Showcase</h1>
+          <p data-showcase-subtitle>Waiting for uploaded proof shots...</p>
+        </div>
+
+        <figure class="showcase-frame">
+          <img data-showcase-image alt="Uploaded birthday quest selfie">
+          <figcaption>
+            <span data-showcase-team>Waiting for players</span>
+            <small data-showcase-meta>Live slideshow</small>
+          </figcaption>
+        </figure>
+
+        <div class="showcase-controls">
+          <button type="button" data-showcase-prev>Prev</button>
+          <button type="button" data-showcase-toggle>Pause</button>
+          <button type="button" data-showcase-next>Next</button>
+        </div>
+
+        <p class="showcase-feedback" data-showcase-feedback aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="showcase.js"></script>
+  </body>
+</html>

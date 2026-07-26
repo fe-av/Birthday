@@ -179,8 +179,7 @@ async function handleLeaderboard(request, env) {
     return json({ ok: true, entries: publicEntries(state.entries), updatedAt: new Date().toISOString() });
   }
 
-  if (request.method === "DELETE") {
-    const payload = await request.json();
+  async function deletePlayer(payload) {
     requireAdminCode(env, payload);
 
     const playerId = sanitizePlayerId(payload.playerId);
@@ -200,11 +199,20 @@ async function handleLeaderboard(request, env) {
     }
   }
 
+  if (request.method === "DELETE") {
+    const payload = await request.json();
+    return deletePlayer(payload);
+  }
+
   if (request.method !== "POST") {
     return json({ ok: false, error: "Method not allowed." }, 405);
   }
 
   const payload = await request.json();
+  if (payload.action === "delete") {
+    return deletePlayer(payload);
+  }
+
   const playerId = sanitizePlayerId(payload.playerId);
   if (!playerId) return json({ ok: false, error: "Missing player id." }, 400);
 

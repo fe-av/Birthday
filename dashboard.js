@@ -120,11 +120,11 @@ async function deletePlayer(playerId, teamName) {
 
   try {
     const response = await fetch(`${API_BASE_URL}/leaderboard`, {
-      method: "DELETE",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ playerId, adminCode }),
+      body: JSON.stringify({ action: "delete", playerId, adminCode }),
     });
     const result = await response.json();
 
