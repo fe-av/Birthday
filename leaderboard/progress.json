@@ -14,14 +14,14 @@
     "player-1785051770068-5051e881f9a508": {
       "playerId": "player-1785051770068-5051e881f9a508",
       "teamName": "kaeli",
-      "level": 6,
-      "levelName": "Real-World Proof",
-      "elapsedSeconds": 39,
-      "status": "Reached Level 6",
-      "selfieUploaded": false,
-      "selfieUrl": "",
+      "level": 7,
+      "levelName": "Final Code Lock",
+      "elapsedSeconds": 47,
+      "status": "Final lock",
+      "selfieUploaded": true,
+      "selfieUrl": "https://raw.githubusercontent.com/fe-av/Birthday/main/selfies/kaeli-2026-07-26T07-51-03-813Z.jpg",
       "startedAt": "2026-07-26T07:50:19.660Z",
-      "updatedAt": "2026-07-26T07:50:57.337Z"
+      "updatedAt": "2026-07-26T07:51:05.056Z"
     }
   }
 }
