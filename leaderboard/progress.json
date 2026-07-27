@@ -75,14 +75,14 @@
     "player-1785118617129-55080e2765efc8": {
       "playerId": "player-1785118617129-55080e2765efc8",
       "teamName": "Ad",
-      "level": 6,
-      "levelName": "Real-World Proof",
-      "elapsedSeconds": 386,
-      "status": "Reached Level 6",
-      "selfieUploaded": false,
-      "selfieUrl": "",
+      "level": 7,
+      "levelName": "Final Code Lock",
+      "elapsedSeconds": 428,
+      "status": "Final lock",
+      "selfieUploaded": true,
+      "selfieUrl": "https://raw.githubusercontent.com/fe-av/Birthday/main/selfies/ad-2026-07-27T02-24-02-655Z.jpg",
       "startedAt": "2026-07-27T02:16:57.129Z",
-      "updatedAt": "2026-07-27T02:23:23.392Z"
+      "updatedAt": "2026-07-27T02:24:05.285Z"
     },
     "player-1785118616369-d1c93cd05115a8": {
       "playerId": "player-1785118616369-d1c93cd05115a8",
