@@ -111,14 +111,14 @@
     "player-1785118608740-db4ddbee6a657": {
       "playerId": "player-1785118608740-db4ddbee6a657",
       "teamName": "Dayana Bayana",
-      "level": 6,
-      "levelName": "Real-World Proof",
-      "elapsedSeconds": 600,
-      "status": "Reached Level 6",
-      "selfieUploaded": false,
-      "selfieUrl": "",
+      "level": 7,
+      "levelName": "Final Code Lock",
+      "elapsedSeconds": 636,
+      "status": "Final lock",
+      "selfieUploaded": true,
+      "selfieUrl": "https://raw.githubusercontent.com/fe-av/Birthday/main/selfies/dayana-bayana-2026-07-27T02-27-22-901Z.jpg",
       "startedAt": "2026-07-27T02:16:48.739Z",
-      "updatedAt": "2026-07-27T02:26:48.490Z"
+      "updatedAt": "2026-07-27T02:27:25.132Z"
     },
     "player-1785118602228-18e3b5250ee62": {
       "playerId": "player-1785118602228-18e3b5250ee62",
