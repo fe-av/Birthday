@@ -123,14 +123,14 @@
     "player-1785118602228-18e3b5250ee62": {
       "playerId": "player-1785118602228-18e3b5250ee62",
       "teamName": "Kaeli, Maureen, Yinchen and James",
-      "level": 4,
-      "levelName": "Campus Coordinates",
-      "elapsedSeconds": 214,
-      "status": "Reached Level 4",
+      "level": 5,
+      "levelName": "Concert Frequency",
+      "elapsedSeconds": 270,
+      "status": "Reached Level 5",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:16:42.228Z",
-      "updatedAt": "2026-07-27T02:20:16.202Z"
+      "updatedAt": "2026-07-27T02:21:12.552Z"
     }
   }
 }
