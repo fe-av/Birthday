@@ -11,6 +11,18 @@
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:16:38.751Z",
       "updatedAt": "2026-07-27T02:16:54.542Z"
+    },
+    "player-1785118608422-f1a1948f61aa38": {
+      "playerId": "player-1785118608422-f1a1948f61aa38",
+      "teamName": "Chandu",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 17,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-27T02:16:48.422Z",
+      "updatedAt": "2026-07-27T02:17:05.042Z"
     }
   }
 }
