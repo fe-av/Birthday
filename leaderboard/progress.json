@@ -59,6 +59,18 @@
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:16:44.517Z",
       "updatedAt": "2026-07-27T02:17:25.502Z"
+    },
+    "player-1785118603572-6e4f9d6a22f2d8": {
+      "playerId": "player-1785118603572-6e4f9d6a22f2d8",
+      "teamName": "Maureen Rina",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 44,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-27T02:16:43.570Z",
+      "updatedAt": "2026-07-27T02:17:27.830Z"
     }
   }
 }
