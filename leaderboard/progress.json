@@ -83,6 +83,18 @@
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:16:57.129Z",
       "updatedAt": "2026-07-27T02:17:30.974Z"
+    },
+    "player-1785118616369-d1c93cd05115a8": {
+      "playerId": "player-1785118616369-d1c93cd05115a8",
+      "teamName": "Ahhhhbi",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 36,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-27T02:16:56.367Z",
+      "updatedAt": "2026-07-27T02:17:32.477Z"
     }
   }
 }
