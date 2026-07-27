@@ -1,3 +1,16 @@
 {
-  "entries": {}
+  "entries": {
+    "player-1785118598752-de71c174276138": {
+      "playerId": "player-1785118598752-de71c174276138",
+      "teamName": "Yinchen, Morin, Karli and James",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 16,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-27T02:16:38.751Z",
+      "updatedAt": "2026-07-27T02:16:54.542Z"
+    }
+  }
 }
