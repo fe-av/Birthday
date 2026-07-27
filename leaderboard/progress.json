@@ -35,6 +35,18 @@
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:16:44.780Z",
       "updatedAt": "2026-07-27T02:17:18.470Z"
+    },
+    "player-1785118615265-9a02a6b8306b8": {
+      "playerId": "player-1785118615265-9a02a6b8306b8",
+      "teamName": "Saran",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 23,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-27T02:16:55.265Z",
+      "updatedAt": "2026-07-27T02:17:18.825Z"
     }
   }
 }
