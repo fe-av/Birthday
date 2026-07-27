@@ -47,6 +47,18 @@
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:16:55.265Z",
       "updatedAt": "2026-07-27T02:17:18.825Z"
+    },
+    "player-1785118604517-a9f25ca2e0eec8": {
+      "playerId": "player-1785118604517-a9f25ca2e0eec8",
+      "teamName": "Xinyi and Seoyoung",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 41,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-27T02:16:44.517Z",
+      "updatedAt": "2026-07-27T02:17:25.502Z"
     }
   }
 }
