@@ -123,14 +123,14 @@
     "player-1785118602228-18e3b5250ee62": {
       "playerId": "player-1785118602228-18e3b5250ee62",
       "teamName": "Kaeli, Maureen, Yinchen and James",
-      "level": 1,
-      "levelName": "Origin Fragment",
-      "elapsedSeconds": 113,
-      "status": "Started Level 1",
+      "level": 2,
+      "levelName": "Passport Fragment",
+      "elapsedSeconds": 145,
+      "status": "Reached Level 2",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:16:42.228Z",
-      "updatedAt": "2026-07-27T02:18:35.733Z"
+      "updatedAt": "2026-07-27T02:19:07.214Z"
     }
   }
 }
