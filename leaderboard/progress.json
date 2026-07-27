@@ -99,14 +99,14 @@
     "player-1785118627273-274786c268b178": {
       "playerId": "player-1785118627273-274786c268b178",
       "teamName": "Anna",
-      "level": 1,
-      "levelName": "Origin Fragment",
-      "elapsedSeconds": 43,
-      "status": "Started Level 1",
+      "level": 2,
+      "levelName": "Passport Fragment",
+      "elapsedSeconds": 198,
+      "status": "Reached Level 2",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:17:07.272Z",
-      "updatedAt": "2026-07-27T02:17:50.665Z"
+      "updatedAt": "2026-07-27T02:20:25.200Z"
     },
     "player-1785118608740-db4ddbee6a657": {
       "playerId": "player-1785118608740-db4ddbee6a657",
