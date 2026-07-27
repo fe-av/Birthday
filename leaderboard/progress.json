@@ -51,14 +51,14 @@
     "player-1785118604517-a9f25ca2e0eec8": {
       "playerId": "player-1785118604517-a9f25ca2e0eec8",
       "teamName": "Xinyi and Seoyoung",
-      "level": 6,
-      "levelName": "Real-World Proof",
-      "elapsedSeconds": 495,
-      "status": "Reached Level 6",
-      "selfieUploaded": false,
-      "selfieUrl": "",
+      "level": 7,
+      "levelName": "Final Code Lock",
+      "elapsedSeconds": 514,
+      "status": "Final lock",
+      "selfieUploaded": true,
+      "selfieUrl": "https://raw.githubusercontent.com/fe-av/Birthday/main/selfies/xinyi-and-seoyoung-2026-07-27T02-25-15-601Z.jpg",
       "startedAt": "2026-07-27T02:16:44.517Z",
-      "updatedAt": "2026-07-27T02:24:59.171Z"
+      "updatedAt": "2026-07-27T02:25:18.577Z"
     },
     "player-1785118603572-6e4f9d6a22f2d8": {
       "playerId": "player-1785118603572-6e4f9d6a22f2d8",
