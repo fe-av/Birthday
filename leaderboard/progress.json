@@ -95,6 +95,18 @@
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:16:56.367Z",
       "updatedAt": "2026-07-27T02:17:32.477Z"
+    },
+    "player-1785118627273-274786c268b178": {
+      "playerId": "player-1785118627273-274786c268b178",
+      "teamName": "Anna",
+      "level": 1,
+      "levelName": "Origin Fragment",
+      "elapsedSeconds": 43,
+      "status": "Started Level 1",
+      "selfieUploaded": false,
+      "selfieUrl": "",
+      "startedAt": "2026-07-27T02:17:07.272Z",
+      "updatedAt": "2026-07-27T02:17:50.665Z"
     }
   }
 }
