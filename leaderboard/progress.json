@@ -27,14 +27,14 @@
     "player-1785118604781-4b64c20ee1b01": {
       "playerId": "player-1785118604781-4b64c20ee1b01",
       "teamName": "Rachel, Wendy and chloe",
-      "level": 6,
-      "levelName": "Real-World Proof",
-      "elapsedSeconds": 388,
-      "status": "Reached Level 6",
-      "selfieUploaded": false,
-      "selfieUrl": "",
+      "level": 7,
+      "levelName": "Final Code Lock",
+      "elapsedSeconds": 415,
+      "status": "Final lock",
+      "selfieUploaded": true,
+      "selfieUrl": "https://raw.githubusercontent.com/fe-av/Birthday/main/selfies/rachel-wendy-and-chloe-2026-07-27T02-23-37-938Z.jpg",
       "startedAt": "2026-07-27T02:16:44.780Z",
-      "updatedAt": "2026-07-27T02:23:12.728Z"
+      "updatedAt": "2026-07-27T02:23:39.613Z"
     },
     "player-1785118615265-9a02a6b8306b8": {
       "playerId": "player-1785118615265-9a02a6b8306b8",
