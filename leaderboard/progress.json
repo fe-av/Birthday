@@ -123,14 +123,14 @@
     "player-1785118602228-18e3b5250ee62": {
       "playerId": "player-1785118602228-18e3b5250ee62",
       "teamName": "Kaeli, Maureen, Yinchen and James",
-      "level": 6,
-      "levelName": "Real-World Proof",
-      "elapsedSeconds": 282,
-      "status": "Reached Level 6",
-      "selfieUploaded": false,
-      "selfieUrl": "",
+      "level": 7,
+      "levelName": "Final Code Lock",
+      "elapsedSeconds": 307,
+      "status": "Final lock",
+      "selfieUploaded": true,
+      "selfieUrl": "https://raw.githubusercontent.com/fe-av/Birthday/main/selfies/kaeli-maureen-yinchen-and-james-2026-07-27T02-21-46-704Z.jpg",
       "startedAt": "2026-07-27T02:16:42.228Z",
-      "updatedAt": "2026-07-27T02:21:23.893Z"
+      "updatedAt": "2026-07-27T02:21:49.131Z"
     }
   }
 }
