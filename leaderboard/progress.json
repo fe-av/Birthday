@@ -123,14 +123,14 @@
     "player-1785118602228-18e3b5250ee62": {
       "playerId": "player-1785118602228-18e3b5250ee62",
       "teamName": "Kaeli, Maureen, Yinchen and James",
-      "level": 3,
-      "levelName": "Work Fragment",
-      "elapsedSeconds": 205,
-      "status": "Reached Level 3",
+      "level": 4,
+      "levelName": "Campus Coordinates",
+      "elapsedSeconds": 214,
+      "status": "Reached Level 4",
       "selfieUploaded": false,
       "selfieUrl": "",
       "startedAt": "2026-07-27T02:16:42.228Z",
-      "updatedAt": "2026-07-27T02:20:07.225Z"
+      "updatedAt": "2026-07-27T02:20:16.202Z"
     }
   }
 }
